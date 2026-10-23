@@ -61,6 +61,8 @@ O CLI Codex já instalado expõe `cloud exec`, `cloud list`, `cloud status` e `c
 
 O seletor de ambientes não mostrou TorricoDev. O navegador disponível nesta sessão abriu a página pública do Codex com opção de login, sem um workspace remoto autenticado. Essas verificações não demonstram inexistência do ambiente informado pelo usuário. O usuário autorizou explicitamente criar uma tarefa Cloud; falta o link/identificador do ambiente para selecionar o destino correto. Nenhuma tarefa Cloud foi criada durante esta auditoria.
 
+Depois, o usuário informou a mudança de nome para **Mark10**. O seletor foi aberto novamente e mostrou apenas `All Environments (Global)`, sem ambientes nomeados. A documentação oficial recomenda verificar a publicação de ambientes indisponíveis, mas o status Published/Unpublished do Mark10 não foi confirmado nesta sessão. Não foi usado o nome do repositório como se fosse o identificador do ambiente.
+
 ## Verificações não executadas
 
 | Verificação | Resultado real |

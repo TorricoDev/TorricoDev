@@ -44,6 +44,8 @@ Não executar `npm install`, Vite ou Playwright localmente para contornar esse l
 
 **Critério de avanço:** obter instalação remota e lockfile, checks e build de produção aprovados. Se houver navegador, validar controles e ausência de erros em execução. Se não houver prévia, registrar exatamente essa limitação após compilar. Até esses critérios serem atendidos, manter PR #1 em rascunho, sem merge, e não declarar o Laboratório de Animações liberado. Ver [evidências da auditoria](evidence/2026-10-23-stage-1-desktop.md).
 
+**Atualização de identificação:** usuário renomeou o ambiente Cloud para **Mark10**. O repositório permanece `TorricoDev/TorricoDev`. Uma nova consulta ao seletor do CLI não apresentou ambientes nomeados. Conforme a documentação oficial de ambientes, conferir em Settings → Codex Cloud → Environments se Mark10 está publicado; o nome ou o link do GitHub não substitui o identificador do executor.
+
 ## Fontes técnicas consultadas
 
 - [Phaser 3.90.0 — package](https://github.com/phaserjs/phaser/blob/v3.90.0/package.json), [BaseCamera](https://github.com/phaserjs/phaser/blob/v3.90.0/src/cameras/2d/BaseCamera.js), [ScaleManager](https://github.com/phaserjs/phaser/blob/v3.90.0/src/scale/ScaleManager.js).

@@ -4,14 +4,14 @@ Protótipo inicial de roguelite medieval em **Phaser 3 + JavaScript + Vite**. Um
 
 ## Situação da entrega
 
-As fontes foram preparadas no workspace do Codex Desktop. O executor desta conversa é Windows local, não o ambiente Cloud **TorricoDev** informado pelo usuário. Não foram instaladas dependências nem iniciados servidores nesse computador. Verificações sem dependências usam o Node já incluído no Codex. Consulte [docs/PROJECT_STATUS.md](docs/PROJECT_STATUS.md) para resultados e pendências, inclusive build e prévia.
+As fontes foram preparadas no workspace do Codex Desktop. O executor desta conversa é Windows local, não o ambiente Cloud **Mark10** informado pelo usuário (nome anterior: TorricoDev). Não foram instaladas dependências nem iniciados servidores nesse computador. Verificações sem dependências usam o Node já incluído no Codex. Consulte [docs/PROJECT_STATUS.md](docs/PROJECT_STATUS.md) para resultados e pendências, inclusive build e prévia.
 
 O usuário autorizou o envio ao repositório público `TorricoDev/TorricoDev`. Destino desta base: branch `codex/roguelite-bootstrap-2026-10-23`, pasta `games/reliquias-da-ruina/`, com revisão por pull request e preservação do README de perfil e da `main`. Selecionar essa branch no Cloud enquanto o PR não estiver integrado. Criar um ambiente Cloud não sincroniza automaticamente arquivos locais nem troca o executor desta conversa.
 
 ## Executar no Codex Cloud
 
 1. No ambiente associado ao repositório acima, selecionar a branch `codex/roguelite-bootstrap-2026-10-23` (ou `main` depois da integração do PR). O projeto fica em `games/reliquias-da-ruina/`.
-2. Selecionar **Work in → Cloud → TorricoDev** e iniciar o trabalho nesse repositório/branch. Executar `cd games/reliquias-da-ruina` a partir da raiz clonada.
+2. Selecionar **Work in → Cloud → Mark10** e iniciar o trabalho nesse repositório/branch. Executar `cd games/reliquias-da-ruina` a partir da raiz clonada. Se o ambiente estiver Unpublished, concluir sua preparação e publicar o ambiente antes de iniciar a tarefa. Essa publicação disponibiliza o executor de desenvolvimento.
 3. Usar Node **22.12 ou superior**. No setup remoto, executar `npm install` e guardar o `package-lock.json` gerado; nas próximas execuções, usar `npm ci`. Liberar acesso ao registro npm no setup se necessário.
 4. Pedir ao Codex para executar:
 

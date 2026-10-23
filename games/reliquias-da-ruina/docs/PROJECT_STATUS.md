@@ -4,7 +4,7 @@
 
 ## Resultado da Etapa 1
 
-**Ainda não aprovada para iniciar o Laboratório de Animações.** Esta conversa continua no executor Desktop Windows; a criação do ambiente TorricoDev não alterou esse executor. Não foi possível confirmar um checkout Cloud, instalar dependências remotamente, compilar nem controlar o jogo no navegador.
+**Ainda não aprovada para iniciar o Laboratório de Animações.** Esta conversa continua no executor Desktop Windows; a criação do ambiente Cloud não alterou esse executor. O usuário renomeou o ambiente de TorricoDev para **Mark10**. Não foi possível confirmar um checkout Cloud, instalar dependências remotamente, compilar nem controlar o jogo no navegador.
 
 A branch remota do PR #1 foi confirmada como `codex/roguelite-bootstrap-2026-10-23`, no commit `0a5c973ce4c9ed6bc293b45b86ec9f3752a973dc`, antes desta atualização documental. As somas Git dos **40 arquivos locais** eram idênticas às dos arquivos sob `games/reliquias-da-ruina/` nesse commit. A pasta local não é um checkout Git; essa confirmação é da branch remota, não uma alegação de checkout local ou Cloud.
 
@@ -12,7 +12,7 @@ Os checks permitidos pelo AGENTS.md foram executados novamente com o Node inclu�
 
 O CLI já instalado respondeu à consulta de tarefas Cloud com `tasks: []`; seu seletor não apresentou TorricoDev. A interface web disponível nesta sessão abriu uma página sem login. Essas observações não provam que o ambiente criado pelo usuário inexista; apenas impedem acessá-lo pelos canais verificados. Não houve instalação de dependências, execução de Vite, abertura do jogo, publicação ou merge.
 
-Instalação, lockfile, build e Playwright continuam pendentes. O PR #1 permanece em rascunho. O usuário autorizou criar uma tarefa Cloud separada para esta etapa; falta identificar o ambiente TorricoDev pelos canais disponíveis. Nenhuma tarefa foi criada ainda. A próxima execução deve partir do ambiente Cloud correto; não repetir esta etapa supondo que uma instrução no chat migre o executor.
+Instalação, lockfile, build e Playwright continuam pendentes. O PR #1 permanece em rascunho. O usuário autorizou criar uma tarefa Cloud separada para esta etapa; o seletor foi reaberto após a mudança para Mark10 e continuou mostrando somente a opção global, sem ambientes nomeados. Falta o link/identificador ou acesso ao ambiente correto. Nenhuma tarefa foi criada ainda. A próxima execução deve partir do ambiente Cloud correto; não repetir esta etapa supondo que uma instrução no chat migre o executor.
 
 ## Implementação preparada
 
@@ -47,7 +47,7 @@ Os PNGs provisórios receberam uma inspeção estática preliminar. Isso não eq
 
 ## Ambiente Cloud informado
 
-Usuário criou **TorricoDev** e indicou `https://github.com/TorricoDev/TorricoDev`, branch `main`. O conector confirmou acesso e repositório público contendo apenas README de perfil. Usuário autorizou enviar a base em branch de trabalho `codex/roguelite-bootstrap-2026-10-23`, subpasta `games/reliquias-da-ruina/`, preservando perfil/main e usando PR para revisão. Selecionar essa branch para continuar no Cloud. Ainda não houve execução nessa máquina remota; criar o ambiente não migra automaticamente a conversa ou a pasta local.
+Usuário criou o ambiente inicialmente denominado **TorricoDev**, depois renomeado para **Mark10**, e indicou `https://github.com/TorricoDev/TorricoDev`, branch `main`. O repositório mantém esse nome; a mudança é apenas no nome do ambiente Cloud. O conector confirmou acesso e repositório público contendo apenas README de perfil antes da importação. Usuário autorizou enviar a base em branch de trabalho `codex/roguelite-bootstrap-2026-10-23`, subpasta `games/reliquias-da-ruina/`, preservando perfil/main e usando PR para revisão. Selecionar essa branch para continuar no Cloud. Ainda não houve execução nessa máquina remota; criar o ambiente não migra automaticamente a conversa ou a pasta local.
 
 Envio realizado: **40 arquivos** na subpasta do jogo, disponíveis no [PR #1 em rascunho](https://github.com/TorricoDev/TorricoDev/pull/1). A árvore remota foi conferida: nenhum arquivo ausente, PNGs presentes e SHA do README de perfil idêntico ao original. Nenhuma exclusão; `main` não foi alterada. O PR aguarda build e validação do runtime no Cloud, sem merge automático.
 
