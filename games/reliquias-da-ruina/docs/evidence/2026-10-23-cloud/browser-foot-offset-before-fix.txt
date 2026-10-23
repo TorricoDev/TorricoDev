@@ -1,0 +1,46 @@
+
+> reliquias-da-ruina@0.1.0 test:browser
+> playwright test --grep buttons, Escape --reporter=line
+
+
+Running 1 test using 1 worker
+
+(node:8651) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/1] tests/browser/room.spec.js:182:1 › buttons, Escape, paused reset and collision overlay work
+  1) tests/browser/room.spec.js:182:1 › buttons, Escape, paused reset and collision overlay work ───
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+      195 |   const overlay = await canvasImage(page);
+      196 |   expect(hidden.equals(overlay)).toBe(false);
+    > 197 |   expect(feetWithoutOverlay.equals(await footImage(page))).toBe(false);
+          |                                                            ^
+      198 |   await testInfo.attach('foot-collider.png', { body: overlay, contentType: 'image/png' });
+      199 |   await press(page, 'F1');
+      200 |   expect(hidden.equals(await canvasImage(page))).toBe(true);
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:197:60
+
+    Error Context: test-results/room-buttons-Escape-paused-reset-and-collision-overlay-work/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/room-buttons-Escape-paused-reset-and-collision-overlay-work/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/room-buttons-Escape-paused-reset-and-collision-overlay-work/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+  1 failed
+    tests/browser/room.spec.js:182:1 › buttons, Escape, paused reset and collision overlay work ────
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

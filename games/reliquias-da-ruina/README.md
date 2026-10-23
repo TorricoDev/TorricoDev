@@ -1,18 +1,18 @@
 # Relíquias da Ruína
 
-Protótipo inicial de roguelite medieval em **Phaser 3 + JavaScript + Vite**. Uma sala fixa, personagem provisório, movimento em oito direções, colisões e animações configuradas por manifest. Etapa 0; combate e progressão ainda não implementados.
+Protótipo inicial de roguelite medieval em **Phaser 3 + JavaScript + Vite**. Uma sala fixa, personagem provisório, movimento em oito direções, colisões e animações configuradas por manifest. Etapa 1 validada no Cloud; combate e progressão ainda não implementados.
 
 ## Situação da entrega
 
-As fontes foram preparadas no workspace do Codex Desktop. O executor desta conversa é Windows local, não o ambiente Cloud **Mark10** informado pelo usuário (nome anterior: TorricoDev). Não foram instaladas dependências nem iniciados servidores nesse computador. Verificações sem dependências usam o Node já incluído no Codex. Consulte [docs/PROJECT_STATUS.md](docs/PROJECT_STATUS.md) para resultados e pendências, inclusive build e prévia.
+A sala foi instalada, compilada e controlada por Playwright em Chromium real no executor Linux do Codex Cloud, na branch `codex/roguelite-bootstrap-2026-10-23`. A evidência anterior no Desktop continua registrada como histórico; veja [o relatório Cloud](docs/evidence/2026-10-23-stage-1-cloud.md) e [o estado atual](docs/PROJECT_STATUS.md).
 
-O usuário autorizou o envio ao repositório público `TorricoDev/TorricoDev`. Destino desta base: branch `codex/roguelite-bootstrap-2026-10-23`, pasta `games/reliquias-da-ruina/`, com revisão por pull request e preservação do README de perfil e da `main`. Selecionar essa branch no Cloud enquanto o PR não estiver integrado. Criar um ambiente Cloud não sincroniza automaticamente arquivos locais nem troca o executor desta conversa.
+Destino: repositório `TorricoDev/TorricoDev`, pasta `games/reliquias-da-ruina/`, [PR #1](https://github.com/TorricoDev/TorricoDev/pull/1). O conector desta tarefa identifica o ambiente como **TorricoDev**; documentos históricos registram também o nome Mark10. Confira o vínculo do executor e a branch, sem depender apenas do nome exibido. O README de perfil e a `main` continuam preservados.
 
 ## Executar no Codex Cloud
 
 1. No ambiente associado ao repositório acima, selecionar a branch `codex/roguelite-bootstrap-2026-10-23` (ou `main` depois da integração do PR). O projeto fica em `games/reliquias-da-ruina/`.
-2. Selecionar **Work in → Cloud → Mark10** e iniciar o trabalho nesse repositório/branch. Executar `cd games/reliquias-da-ruina` a partir da raiz clonada. Se o ambiente estiver Unpublished, concluir sua preparação e publicar o ambiente antes de iniciar a tarefa. Essa publicação disponibiliza o executor de desenvolvimento.
-3. Usar Node **22.12 ou superior**. No setup remoto, executar `npm install` e guardar o `package-lock.json` gerado; nas próximas execuções, usar `npm ci`. Liberar acesso ao registro npm no setup se necessário.
+2. Selecionar o executor **Cloud** associado a esse repositório e iniciar o trabalho na branch do jogo. Executar `cd games/reliquias-da-ruina` a partir da raiz clonada. Se o ambiente estiver Unpublished, concluir sua preparação e publicar o ambiente antes de iniciar a tarefa. Essa publicação disponibiliza o executor de desenvolvimento.
+3. Usar Node **22.12 ou superior**. O `package-lock.json` já foi gerado pelo npm e validado. Usar `npm ci` para instalar as versões resolvidas; `npm install` fica reservado a atualizações intencionais, preservando o lockfile. Liberar acesso ao registro npm no setup se necessário.
 4. Pedir ao Codex para executar:
 
 ```sh
@@ -25,18 +25,18 @@ npm run build
 5. Se o ambiente oferecer prévia de portas, executar **somente no Cloud**:
 
 ```sh
-npm run dev -- --port 5173
+npm run dev -- --host 127.0.0.1 --port 5173
 ```
 
 Abrir a prévia da porta 5173 pela interface do ambiente. Uma URL de localhost do executor remoto não abre diretamente no celular/computador sem um recurso de encaminhamento. A disponibilidade dessa prévia deve ser confirmada em cada ambiente. Sem suporte, registrar a limitação; não publicar o site para contorná-la.
 
-Para os testes de integração, no Cloud instalar Chromium via `npx playwright install chromium` (e dependências do sistema, se exigidas pelo container). Com a prévia remota em execução:
+Para integração, usar o Chromium já instalado no executor com `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium`, quando esse caminho existir. Caso contrário, instalar o navegador no Cloud com `npx playwright install chromium` e usar o padrão do Playwright. Com o servidor remoto em execução:
 
 ```sh
-GAME_TEST_URL=http://127.0.0.1:5173 npm run test:browser
+GAME_TEST_URL=http://127.0.0.1:5173 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:browser
 ```
 
-O Playwright não inicia servidor automaticamente. Para validar o build, usar `npm run preview -- --port 4173` no Cloud e apontar `GAME_TEST_URL` para a porta 4173. Os testes de navegador ainda não foram executados nesta sessão.
+O Playwright não inicia servidor automaticamente. Para validar o build, usar `npm run preview -- --host 127.0.0.1 --port 4173` no Cloud e apontar `GAME_TEST_URL` para a porta 4173. A suíte foi executada em desenvolvimento e no build de produção. O acesso interativo por encaminhamento de porta não está disponível nas ferramentas desta tarefa; as URLs de loopback são apenas destinos internos dos testes remotos.
 
 Para continuar pelo celular, selecionar o ambiente Cloud já configurado e enviar tarefas. O computador pode ficar desligado. A sincronização com arquivos locais depende do Git. [Documentação oficial do Codex Cloud](https://learn.chatgpt.com/docs/cloud).
 

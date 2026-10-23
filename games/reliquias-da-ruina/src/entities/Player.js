@@ -31,7 +31,13 @@ export class Player {
   sync() { this.layers.sync(this.facing); }
 
   reset() {
-    this.sprite.body.reset(this.spawn.x, this.spawn.y);
+    const body = this.sprite.body;
+    body.reset(this.spawn.x, this.spawn.y);
+    // Phaser 3.90 reset() omits the custom offset until the next physics step.
+    // Sync now (also while paused), without adding a postUpdate displacement.
+    body.updateFromGameObject();
+    body.prev.copy(body.position);
+    body.prevFrame.copy(body.position);
     this.sprite.setVelocity(0, 0);
     this.action = 'idle'; this.facing = 'S';
     this.animations.play(this.action, this.facing);

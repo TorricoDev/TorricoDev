@@ -1,58 +1,46 @@
 # Estado do projeto
 
-23/10/2026 · Etapa 1: auditoria iniciada; validação Cloud pendente · modo Auditoria.
+23/10/2026 · Etapa 1 validada tecnicamente no Codex Cloud · modos Auditoria e Correção.
 
 ## Resultado da Etapa 1
 
-**Ainda não aprovada para iniciar o Laboratório de Animações.** Esta conversa continua no executor Desktop Windows; a criação do ambiente Cloud não alterou esse executor. O usuário renomeou o ambiente de TorricoDev para **Mark10**. Não foi possível confirmar um checkout Cloud, instalar dependências remotamente, compilar nem controlar o jogo no navegador.
+**Base técnica preparada para iniciar o Laboratório de Animações.** A sala foi instalada, compilada e controlada por teclado automatizado em Chromium real no executor remoto. Não se trata mais apenas dos checks sem dependências do Desktop. Evidências: [relatório Cloud](evidence/2026-10-23-stage-1-cloud.md), [resultados Playwright](evidence/2026-10-23-cloud/browser-production.json) e [captura da sala](evidence/2026-10-23-cloud/room-3x.png).
 
-A branch remota do PR #1 foi confirmada como `codex/roguelite-bootstrap-2026-10-23`, no commit `0a5c973ce4c9ed6bc293b45b86ec9f3752a973dc`, antes desta atualização documental. As somas Git dos **40 arquivos locais** eram idênticas às dos arquivos sob `games/reliquias-da-ruina/` nesse commit. A pasta local não é um checkout Git; essa confirmação é da branch remota, não uma alegação de checkout local ou Cloud.
+O executor associado à configuração **TorricoDev** é Linux x86_64; checkout `/workspace/TorricoDev`, branch `codex/roguelite-bootstrap-2026-10-23`, jogo em `games/reliquias-da-ruina/`. A base auditada foi `9afa5e0e87c9274268b05877f494ecc5da8052ed`, correspondente ao head remoto do PR #1 na entrada. O conector não expõe a URL da página do ambiente. As referências a Windows/Mark10 pertencem à [auditoria histórica do Desktop](evidence/2026-10-23-stage-1-desktop.md).
 
-Os checks permitidos pelo AGENTS.md foram executados novamente com o Node incluído no Codex: **22 arquivos passaram na verificação de sintaxe, 26 testes passaram sem falhas e 30 quadros passaram na validação estrutural**. Não surgiram falhas nesses checks; não houve correções de código ou mudanças de mecânicas. Evidências e lacunas: [relatório da auditoria](evidence/2026-10-23-stage-1-desktop.md).
+## Verificações executadas
 
-O CLI já instalado respondeu à consulta de tarefas Cloud com `tasks: []`; seu seletor não apresentou TorricoDev. A interface web disponível nesta sessão abriu uma página sem login. Essas observações não provam que o ambiente criado pelo usuário inexista; apenas impedem acessá-lo pelos canais verificados. Não houve instalação de dependências, execução de Vite, abertura do jogo, publicação ou merge.
-
-Instalação, lockfile, build e Playwright continuam pendentes. O PR #1 permanece em rascunho. O usuário autorizou criar uma tarefa Cloud separada para esta etapa; o seletor foi reaberto após a mudança para Mark10 e continuou mostrando somente a opção global, sem ambientes nomeados. Falta o link/identificador ou acesso ao ambiente correto. Nenhuma tarefa foi criada ainda. A próxima execução deve partir do ambiente Cloud correto; não repetir esta etapa supondo que uma instrução no chat migre o executor.
-
-## Implementação preparada
-
-- Phaser 3.90.0, JavaScript ESM, Vite e HTML/CSS; instalação das dependências ainda pendente.
-- Cena Boot e sala de câmera fixa 320×180, template com cinco obstáculos, Arcade Physics e colisão nos pés.
-- Movimento normalizado em oito direções; WASD/setas; idle conserva facing; pausa, perda de foco, reinício e debug de colisão.
-- Pixel art configurada sem antialias, arredondamento visual e escala inteira de exibição.
-- Spritesheets provisórios originais com 30 quadros em cinco bases direcionais, aliases seguros para oito orientações e FPS por ação.
-- Corpo/sombra e slots separados de arma/efeitos; armas e efeitos de combate ainda não implementados.
-- Ferramentas e testes de lógica/arte sem dependências; testes de integração Playwright preparados.
-- AGENTS.md com modos automáticos Criação, Correção e Auditoria; GDD, decisões, pipeline, especificação e próximos passos.
-- GDD e prompt históricos preservados na raiz.
-
-## Validação do bootstrap e rechecagem da Etapa 1
-
-Executor observado: Codex Desktop Windows, workspace local `mark10`, Node fornecido pelo Codex v24.22.1. Sem instalação de dependências/programas ou servidor local. Usuário autorizou o envio do código ao repositório público indicado, em branch separada.
-
-| Verificação | Situação |
+| Verificação | Resultado final |
 | --- | --- |
-| Geração dos placeholders | executada; idle 96×240, move 192×240 |
-| Validação dos spritesheets | executada; 30 quadros aprovados estruturalmente |
-| Sintaxe JavaScript | passou; 22 arquivos via `node tools/check-source.mjs` |
-| Testes Node de lógica/arte | 26 passaram, 0 falhas via `node --test tests/*.test.js` |
-| Instalação Phaser/Vite/Playwright | pendente; somente no Cloud |
-| Build de produção | bloqueado na pré-verificação: importação de Vite retorna `ERR_MODULE_NOT_FOUND`; instalação reservada ao Cloud |
-| Testes de navegador e colisões reais | pendentes; sem servidor ou navegador de jogo iniciado |
-| Revisão visual interativa | não realizada |
+| `npm install` | passou no Cloud; gerou o lockfile que faltava |
+| `npm ci` | passou; SHA-256 do lockfile permaneceu idêntico |
+| `npm run check` | 22 arquivos JavaScript verificados |
+| `npm test` | 26 passaram; 0 falhas, cancelados ou skips |
+| `npm run validate:assets` | 30 quadros; RGBA, dimensões, alpha, margens e baseline aprovados |
+| `npm run build` | passou; aviso não bloqueante sobre tamanho do chunk Phaser |
+| Playwright em desenvolvimento | 11 passaram antes da correção final da hitbox; não substitui a revalidação de produção |
+| Playwright no build final de produção | 11 passaram; 0 falhas, skips ou testes instáveis; 34,3 s |
+| Console/JavaScript no build final | nenhum erro nos 11 casos |
+| Capturas do navegador remoto | sala 3×, 1× em DPR 1/2, quadros idle/move e F1 inspecionados |
 
-Aceitação de runtime e visual permanece aberta. A presença do código ou aprovação de testes puros não prova funcionamento do Phaser no navegador.
+Runtime: Node v24.19.0, npm 11.9.0, Phaser 3.90.0, Vite 7.3.7, Playwright 1.64.1 e Chromium 154.0.8037.57. O lockfile foi gerado pelo npm, não manualmente.
 
-Os PNGs provisórios receberam uma inspeção estática preliminar. Isso não equivale a uma prévia interativa do jogo nem aprova animações em movimento.
+## Correções e cobertura
 
-## Ambiente Cloud informado
+- Corrigido o reinício em pausa: `Body.reset()` do Phaser 3.90 deixava a hitbox sem o offset até o próximo passo físico. Agora o corpo e suas posições anteriores são sincronizados imediatamente. A regressão visual falhou antes da correção e passou depois; há capturas antes/depois.
+- Removida a solicitação implícita de favicon inexistente, que provocava HTTP 404 no console do build. Nenhuma arte foi adicionada.
+- Corrigida uma instabilidade do teste de diagonal por soltura de teclas em frames diferentes, usando o relógio controlado do Playwright.
+- Verificados deslocamento e orientação nas oito direções, normalização diagonal, WASD/setas, teclas opostas, idle/move, avanço de quadros, pausa da física/playback, reinício por tecla/botão, Escape, perda de foco e F1.
+- Verificadas colisões nos quatro limites e nos cinco obstáculos, spawn [160,116], hitbox nos pés e escalas inteiras 1×/2×/3×, inclusive DPR 1/2 e viewport menor que a resolução lógica.
 
-Usuário criou o ambiente inicialmente denominado **TorricoDev**, depois renomeado para **Mark10**, e indicou `https://github.com/TorricoDev/TorricoDev`, branch `main`. O repositório mantém esse nome; a mudança é apenas no nome do ambiente Cloud. O conector confirmou acesso e repositório público contendo apenas README de perfil antes da importação. Usuário autorizou enviar a base em branch de trabalho `codex/roguelite-bootstrap-2026-10-23`, subpasta `games/reliquias-da-ruina/`, preservando perfil/main e usando PR para revisão. Selecionar essa branch para continuar no Cloud. Ainda não houve execução nessa máquina remota; criar o ambiente não migra automaticamente a conversa ou a pasta local.
+## Limitações e revisão
 
-Envio realizado: **40 arquivos** na subpasta do jogo, disponíveis no [PR #1 em rascunho](https://github.com/TorricoDev/TorricoDev/pull/1). A árvore remota foi conferida: nenhum arquivo ausente, PNGs presentes e SHA do README de perfil idêntico ao original. Nenhuma exclusão; `main` não foi alterada. O PR aguarda build e validação do runtime no Cloud, sem merge automático.
+O navegador é Chromium headless remoto. As capturas foram inspecionadas, e os controles foram efetivamente acionados por Playwright; não houve uma pessoa jogando por prévia encaminhada nem avaliação humana contínua da fluidez. As ferramentas desta tarefa não oferecem essa prévia interativa. Não foram testados outros navegadores, dispositivos físicos ou controles de toque/gamepad.
 
-## Fora desta etapa
+O PR #1 é o destino dos documentos, lockfile, correções e evidências. Mantê-lo em rascunho para revisão humana, sem merge automático. A página pública confirmou o rascunho; a API de comentários/descrição foi bloqueada pelo proxy (CONNECT HTTP 403 para `api.github.com`). O envio à branch deve ser confirmado por Git; não confundir esse envio com alteração da descrição do PR.
 
-Combate, esquiva, habilidades, mira de mouse, inimigos, chefes, proceduralidade, progressão, save, toque/gamepad, áudio e arte definitiva. O laboratório de animação está especificado, ainda não implementado. Nenhuma run de 5–15 minutos está disponível.
+## Escopo preservado
 
-Próxima ação: concluir validação remota; depois construir o laboratório de animações. Ver [NEXT_STEPS.md](NEXT_STEPS.md).
+A sala fixa, os 30 quadros provisórios, o manifest, a ordem das direções, o espelhamento, o pivô, o corpo 12×8 e as camadas continuam sendo a base. Nenhum combate, inimigo, geração procedural ou arte definitiva foi implementado. Nenhum servidor foi iniciado no computador do usuário; as prévias usadas pelos testes ficaram no loopback do executor remoto, sem hospedagem pública.
+
+Próxima etapa: [Laboratório de Animações](NEXT_STEPS.md), sujeito ao pedido do usuário. A aceitação humana da arte e da fluidez continua separada da aprovação técnica desta sala.

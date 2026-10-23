@@ -1,34 +1,49 @@
 # Próximos passos
 
-## 1. Concluir validação no Cloud
+## 1. Iniciar o Laboratório de Animações
 
-**Bloqueio confirmado nesta auditoria:** a conversa atual permanece no Desktop. Os checks puros passaram novamente, mas instalação, lockfile, build e navegador não foram executados remotamente. Não iniciar o Laboratório de Animações com base nesses resultados parciais.
+A Etapa 1 cumpriu os critérios técnicos no Cloud: instalação reproduzível, lockfile, check, 26 testes de lógica/arte, 30 quadros validados, build e 11 testes de navegador sobre o build final. O personagem foi controlado por Playwright em Chromium remoto. Ver [estado atual](PROJECT_STATUS.md) e [evidências](evidence/2026-10-23-stage-1-cloud.md).
 
-Usuário autorizou uma nova tarefa Cloud e renomeou o ambiente para **Mark10**. Identificá-lo pelo link das configurações antes de enviar a tarefa; o seletor do CLI verificado não o apresentou. Conferir em Settings → Codex Cloud → Environments se está publicado. Não criar em um ambiente diferente nem afirmar que o envio foi concluído sem obter o identificador/URL da tarefa criada.
+Após o pedido do usuário, criar uma cena com seleção de ator/ação/direção, galeria das oito orientações, grade/pivô/hitbox, frame stepping, playback, zoom inteiro e fundos variados. Reutilizar manifest e AnimationDriver. Não implementar combate ou substituir os placeholders por arte definitiva nessa tarefa inicial.
 
-- Destino autorizado: repositório público `TorricoDev/TorricoDev`, branch `codex/roguelite-bootstrap-2026-10-23`, subpasta `games/reliquias-da-ruina/`. O ambiente informado se chama **Mark10** (anteriormente TorricoDev).
-- Abrir tarefa nesse ambiente e selecionar a branch do jogo, entrando na subpasta. Instalar dependências remotamente, gerar/guardar `package-lock.json` e repetir check, testes, validação de assets e build do README.
-- Antes de instalar, registrar `pwd`, `git branch --show-current`, `git rev-parse HEAD`, `node --version` e `npm --version`, comprovando o executor remoto e a branch solicitada. A pasta Desktop sem `.git` não atende a essa confirmação.
-- Executar `npm install` preservando lockfile existente, caso ele tenha sido criado por outra tarefa. Na árvore auditada não havia lockfile. Guardar o arquivo gerado e os logs; não criar um lockfile manualmente.
-- Confirmar suporte a prévia de porta. Executar testes Playwright remotos e revisão visual da sala. Sem suporte a visualização, registrar o impedimento com os resultados disponíveis.
-- Verificar WASD/setas, teclas opostas, oito direções, diagonal, colisões nos cinco obstáculos e nos quatro limites, F1, reset, pausa, perda/retorno de foco e resize 1×/2×/3×.
-- Verificar camadas e oclusão ao passar à frente/atrás dos pilares, pés e baseline, nitidez e legibilidade a 100% de escala lógica. Capturar evidência apenas de execução real.
-- Registrar no PR #1 as correções, saídas dos comandos, versão do navegador, screenshots/traces e limitações. Manter o rascunho enquanto houver validação pendente; não fazer merge automático.
+## 2. Revisão humana e PR #1
 
-Os testes de navegador atuais cobrem boot, oito orientações com retorno a idle, limite direito/altar e pausa/reset/perda de foco. Eles ainda não substituem a verificação de deslocamento nas oito direções, velocidade diagonal real, todos os obstáculos/limites, mudança de viewport e inspeção visual da nitidez. Executar essas verificações e registrar lacunas sem marcá-las como aprovadas.
+- Manter o PR #1 em rascunho e sem merge automático até a revisão. Correções, lockfile e resultados ficam versionados na branch `codex/roguelite-bootstrap-2026-10-23`.
+- As ferramentas atuais não oferecem prévia encaminhada para uma pessoa jogar. Quando disponível no Cloud, rever resposta dos controles, fluidez, silhueta e oclusão ao passar diante/atrás dos pilares. Essa revisão humana não foi realizada pela automação.
+- Outros navegadores, DPRs fracionários e dispositivos físicos permanecem sem teste. Toque e gamepad não pertencem ao escopo atual.
+- A API GitHub retornou CONNECT HTTP 403 para `api.github.com`; comentários e descrição do PR precisam desse destino liberado nas configurações de rede. O acesso Git à branch é uma operação distinta.
+- Não otimizar ou reestruturar o bundle apenas pelo aviso do Phaser de chunk >500 kB; medir necessidades antes de uma tarefa específica de desempenho.
 
-## 2. Construir o laboratório de animações
+## 3. Reproduzir a validação no Cloud
 
-Prioridade depois do primeiro build aprovado: cena com seleção de ação/direção, galeria das oito orientações, grade/pivô/hitbox, frame stepping, zoom inteiro e fundos variados. Reutilizar os mesmos contratos e controlador de animações. Depois validar uma única base artística real antes de produzir muitos quadros.
+Usar o checkout existente `/workspace/TorricoDev`, sem criar worktree: cada tarefa Cloud já é isolada. Confirmar a branch acima, entrar em `games/reliquias-da-ruina/`, ler AGENTS.md e usar Node >=22.12.
 
-## 3. Primeiro experimento de combate
+```sh
+npm ci --cache /workspace/.cache/npm
+npm run check
+npm test
+npm run validate:assets
+npm run build
+```
 
-Somente após pedido/aceitação da base: mira contínua, uma espada, um alvo e uma esquiva. Hitboxes e janelas de ataque independentes da arte, arma e VFX em camadas separadas. Medir resposta e legibilidade antes de adicionar arma à distância.
+Para testar o build no executor remoto, iniciar separadamente:
 
-## 4. Vertical slice posterior
+```sh
+npm run preview -- --host 127.0.0.1 --port 4173
+```
 
-Inimigos, chefe, templates e geração por seed, recompensas, vitória/derrota e save local entram incrementalmente após uma sala de combate validada. Run de 5–15 minutos é alvo de design; nenhum tempo de partida foi medido nesta entrega.
+Com o Chromium remoto instalado no caminho verificado nesta tarefa:
 
-## Prompt para continuar no ambiente Mark10
+```sh
+GAME_TEST_URL=http://127.0.0.1:4173 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:browser
+```
 
-> No ambiente Cloud Mark10, use o repositório TorricoDev/TorricoDev e a branch codex/roguelite-bootstrap-2026-10-23. Entre em games/reliquias-da-ruina e leia AGENTS.md e docs/PROJECT_STATUS.md. Confirme que o executor é Cloud. Preserve arquivos existentes e não configure hospedagem pública, serviços pagos ou infraestrutura externa. Execute a instalação remota de package.json, guarde o lockfile e rode npm run check, npm test, npm run validate:assets e npm run build. Se houver navegador/prévia disponível, execute os testes de integração e valide visualmente a sala. Corrija os problemas encontrados e atualize o status com evidências reais. Não amplie o escopo para combate ou arte final nesta validação.
+`GAME_TEST_URL` é obrigatório; os testes não iniciam servidor automaticamente. As URLs de loopback são internas ao Cloud, não links públicos ou prévias encaminhadas. O processo precisa ser reiniciado em novas tarefas. Preservar o lockfile e alterações existentes; não repetir geração dos placeholders sem motivo.
+
+## 4. Primeiro experimento de combate
+
+Somente após novo pedido e aceitação da base/laboratório: mira contínua, uma espada, um alvo e uma esquiva. Hitboxes e janelas de ataque independentes da arte, arma e VFX em camadas separadas. Medir resposta e legibilidade antes de adicionar arma à distância.
+
+## 5. Vertical slice posterior
+
+Inimigos, chefe, templates e geração por seed, recompensas, vitória/derrota e save local entram incrementalmente após uma sala de combate validada. Run de 5–15 minutos continua sendo alvo de design; nenhum tempo de partida foi medido nesta entrega.

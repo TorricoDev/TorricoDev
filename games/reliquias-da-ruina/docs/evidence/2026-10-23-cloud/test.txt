@@ -1,0 +1,46 @@
+$ npm test
+
+> reliquias-da-ruina@0.1.0 test
+> node --test tests/*.test.js
+
+✔ five original rows provide all eight directions using safe horizontal mirrors (2.814347ms)
+✔ animation speed, repeat and frame range come from action data (0.605956ms)
+✔ eight original directions work without mirroring asymmetric art (0.3378ms)
+✔ manifest rejects unsafe mirroring (0.535602ms)
+✔ manifest rejects mirror chains (0.501011ms)
+✔ manifest rejects missing directions (0.215258ms)
+✔ manifest rejects duplicate directions (0.27065ms)
+✔ manifest rejects off-center mirror anchor (0.542081ms)
+✔ manifest rejects wrong cell category (0.524706ms)
+✔ manifest rejects invalid FPS (0.785511ms)
+✔ manifest rejects invalid frame count (0.39207ms)
+✔ manifest rejects path traversal (0.244992ms)
+✔ manifest rejects opaque body alpha policy (0.287235ms)
+✔ manifest rejects wrong vertical pivot (2.820952ms)
+✔ unknown states and orientations fail clearly (0.582061ms)
+✔ tracked sheets match dimensions, alpha, margins and baseline (23.06215ms)
+✔ PNG encoder and decoder preserve exact RGBA, including transparent pixels (2.354973ms)
+✔ PNG parser rejects corrupt, truncated and non-PNG inputs (0.551275ms)
+✔ sheet validation rejects dimensions, alpha blending, cropping, empty frames and foot drift (1.421482ms)
+✔ decoder supports PNG row filters Sub, Up, Average and Paeth used by art exporters (1.420851ms)
+✔ all eight directions preserve the same speed (1.138774ms)
+✔ idle retains facing, with south as the initial direction (5.005612ms)
+✔ opposite keys cancel without NaN (3.007828ms)
+✔ near-horizontal vectors are visually quantized without changing the movement vector (0.246244ms)
+✔ viewport scaling always uses whole pixels, including undersized viewports (0.382846ms)
+✔ room spawn and every static obstacle fit inside room bounds (0.253555ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 132.457994
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+
+Exit status: 0
