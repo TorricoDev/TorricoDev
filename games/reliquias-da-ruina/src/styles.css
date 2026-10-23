@@ -1,0 +1,33 @@
+:root { color-scheme: dark; font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; color: #dce4d6; background: #101b20; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: radial-gradient(ellipse at 50% 0%, #243b38 0%, #101b20 65%); min-height: 100svh; }
+.workbench { max-width: 1120px; padding: 44px 32px 24px; margin: auto; }
+.masthead, .room-bar, .controls, .telemetry { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.masthead { margin-bottom: 28px; align-items: flex-end; }
+.eyebrow { color: #a8be8a; font-size: 10px; letter-spacing: 2px; margin: 0 0 14px; }
+h1 { margin: 0; font-family: Georgia, serif; font-weight: 500; font-size: clamp(28px, 4vw, 42px); letter-spacing: -.7px; }
+h1 span { display: block; font-family: ui-monospace, Consolas, monospace; font-size: 12px; color: #90a79e; letter-spacing: 0; margin-top: 10px; }
+.build-tag { font-size: 9px; white-space: nowrap; color: #aab6a1; border: 1px solid #3c5149; padding: 8px 10px; }
+i { display: inline-block; width: 5px; height: 5px; background: #cfad67; margin: 0 6px; }
+.game-card { border: 1px solid #3b5048; background: #10191d; box-shadow: 0 22px 70px #070f1540; }
+.room-bar { min-height: 42px; padding: 0 16px; color: #8fa79d; font-size: 10px; border-bottom: 1px solid #34473e; }
+.room-bar b { color: #cad7b6; margin-left: 9px; font-weight: 500; }
+#game-viewport { position: relative; height: clamp(240px, 52vw, 580px); overflow: auto; display: grid; place-items: center; background: #0b1419; }
+#game { display: flex; flex: none; }
+canvas { display: block; image-rendering: pixelated; image-rendering: crisp-edges; outline: none; }
+canvas:focus-visible { outline: 2px solid #d7bc7c; outline-offset: 3px; }
+#loading-message { position: absolute; font-size: 12px; padding: 16px; background: #101b20; }
+.telemetry { flex-wrap: wrap; min-height: 42px; padding: 10px 16px; font-size: 9px; color: #80978e; border-top: 1px solid #34473e; }
+.telemetry strong { color: #cad7b6; margin-left: 7px; font-weight: 500; }
+#game-status { color: #bdc999; margin-left: auto; }
+.controls { margin-top: 24px; align-items: flex-start; font-size: 11px; }
+.controls p { margin: 0 0 12px; line-height: 1.8; }
+kbd { font: inherit; color: #d6decb; border: 1px solid #42564e; padding: 3px 6px; background: #1e302e; }
+.separator { color: #536b60; margin: 0 10px; }
+.muted, .scope-note { color: #829a90; }
+.actions { display: flex; gap: 8px; }
+button { font: inherit; color: #cad7b6; border: 1px solid #42564e; background: #233630; padding: 10px 12px; cursor: pointer; white-space: nowrap; }
+button:hover, button:focus-visible { background: #344c3c; outline-color: #d7bc7c; }
+button kbd { margin-left: 9px; font-size: 9px; }
+.scope-note { font-size: 10px; margin-top: 22px; line-height: 1.8; }
+@media (max-width: 650px) { .workbench { padding: 24px 12px; } .masthead, .controls { flex-direction: column; align-items: flex-start; } .build-tag { margin-top: 8px; } .room-bar { font-size: 8px; gap: 8px; padding: 0 10px; } .telemetry { gap: 12px; } #game-viewport { justify-items: start; } }

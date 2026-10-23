@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101b20" />
+    <title>Relíquias da Ruína · Sala de testes</title>
+  </head>
+  <body>
+    <main class="workbench">
+      <header class="masthead">
+        <div><p class="eyebrow">PROTÓTIPO 001 / BOSQUE DAS RUÍNAS</p><h1>Relíquias da Ruína<span>Laboratório de movimento</span></h1></div>
+        <span class="build-tag">ETAPA 0 <i></i> ARTE PROVISÓRIA</span>
+      </header>
+      <section class="game-card" aria-label="Sala de testes interativa">
+        <div class="room-bar"><span>01 <b>PÁTIO ESQUECIDO</b></span><span>CÂMERA FIXA · 320 × 180</span></div>
+        <div id="game-viewport"><div id="game"></div><p id="loading-message" role="status">Preparando a sala…</p></div>
+        <div class="telemetry" aria-label="Estado do personagem">
+          <span>ESTADO <strong id="player-state">—</strong></span><span>DIREÇÃO <strong id="player-facing">—</strong></span><span>POSIÇÃO <strong id="player-position" data-x="0" data-y="0">—</strong></span><span id="game-status" role="status">CARREGANDO</span>
+        </div>
+      </section>
+      <footer class="controls">
+        <div><p><kbd>W A S D</kbd> / <kbd>↑ ← ↓ →</kbd> Mover <span class="separator">/</span> <kbd>F1</kbd> Colisões</p><p class="muted">Oito direções. Pixels inteiros. Um passo de cada vez.</p></div>
+        <div class="actions"><button id="pause-button" type="button">Pausar <kbd>P</kbd></button><button id="reset-button" type="button">Reiniciar <kbd>R</kbd></button></div>
+      </footer>
+      <p class="scope-note">Sala técnica com obstáculos sólidos. Combate, esquiva e progressão entram nas próximas etapas.</p>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
