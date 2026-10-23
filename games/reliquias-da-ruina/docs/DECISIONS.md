@@ -36,6 +36,14 @@
 
 Não instalar dependências nem iniciar servidores locais. Usar apenas o Node incluído no Codex para verificações sem dependências; build e runtime ficam pendentes para Cloud. Usuário autorizou explicitamente esse destino público. A base foi enviada na branch `codex/roguelite-bootstrap-2026-10-23`, em `games/reliquias-da-ruina/`, no [PR #1](https://github.com/TorricoDev/TorricoDev/pull/1), preservando README e main. Não confundir publicação de ambiente de desenvolvimento com publicação pública do jogo.
 
+## D009 — Aceitação da Etapa 1 exige evidência do executor remoto
+
+**Origem:** pedido de validação do usuário em 23/10/2026. A auditoria confirmou novamente `win32`, workspace local sem `.git` e Node do runtime Codex. A branch foi confirmada remotamente no PR #1 e os 40 arquivos locais coincidiram por SHA Git com o commit auditado; isso permite relacionar os checks puros às fontes do PR, mas não transforma a sessão em checkout Cloud.
+
+Não executar `npm install`, Vite ou Playwright localmente para contornar esse limite. Não produzir lockfile manual nem considerar build aprovado por ausência de falhas nos testes de lógica. O CLI Cloud disponível não apresentou o ambiente TorricoDev, e o navegador acessível não tinha sessão autenticada. O usuário autorizou explicitamente uma tarefa Cloud separada; é necessário identificar o ambiente correto antes de criá-la. Depois de acessá-la, confirmar plataforma, diretório, branch e commit antes da instalação remota.
+
+**Critério de avanço:** obter instalação remota e lockfile, checks e build de produção aprovados. Se houver navegador, validar controles e ausência de erros em execução. Se não houver prévia, registrar exatamente essa limitação após compilar. Até esses critérios serem atendidos, manter PR #1 em rascunho, sem merge, e não declarar o Laboratório de Animações liberado. Ver [evidências da auditoria](evidence/2026-10-23-stage-1-desktop.md).
+
 ## Fontes técnicas consultadas
 
 - [Phaser 3.90.0 — package](https://github.com/phaserjs/phaser/blob/v3.90.0/package.json), [BaseCamera](https://github.com/phaserjs/phaser/blob/v3.90.0/src/cameras/2d/BaseCamera.js), [ScaleManager](https://github.com/phaserjs/phaser/blob/v3.90.0/src/scale/ScaleManager.js).

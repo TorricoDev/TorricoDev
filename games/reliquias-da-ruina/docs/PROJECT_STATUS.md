@@ -1,6 +1,18 @@
 # Estado do projeto
 
-23/10/2026 · Etapa 0 · modo Criação.
+23/10/2026 · Etapa 1: auditoria iniciada; validação Cloud pendente · modo Auditoria.
+
+## Resultado da Etapa 1
+
+**Ainda não aprovada para iniciar o Laboratório de Animações.** Esta conversa continua no executor Desktop Windows; a criação do ambiente TorricoDev não alterou esse executor. Não foi possível confirmar um checkout Cloud, instalar dependências remotamente, compilar nem controlar o jogo no navegador.
+
+A branch remota do PR #1 foi confirmada como `codex/roguelite-bootstrap-2026-10-23`, no commit `0a5c973ce4c9ed6bc293b45b86ec9f3752a973dc`, antes desta atualização documental. As somas Git dos **40 arquivos locais** eram idênticas às dos arquivos sob `games/reliquias-da-ruina/` nesse commit. A pasta local não é um checkout Git; essa confirmação é da branch remota, não uma alegação de checkout local ou Cloud.
+
+Os checks permitidos pelo AGENTS.md foram executados novamente com o Node incluído no Codex: **22 arquivos passaram na verificação de sintaxe, 26 testes passaram sem falhas e 30 quadros passaram na validação estrutural**. Não surgiram falhas nesses checks; não houve correções de código ou mudanças de mecânicas. Evidências e lacunas: [relatório da auditoria](evidence/2026-10-23-stage-1-desktop.md).
+
+O CLI já instalado respondeu à consulta de tarefas Cloud com `tasks: []`; seu seletor não apresentou TorricoDev. A interface web disponível nesta sessão abriu uma página sem login. Essas observações não provam que o ambiente criado pelo usuário inexista; apenas impedem acessá-lo pelos canais verificados. Não houve instalação de dependências, execução de Vite, abertura do jogo, publicação ou merge.
+
+Instalação, lockfile, build e Playwright continuam pendentes. O PR #1 permanece em rascunho. O usuário autorizou criar uma tarefa Cloud separada para esta etapa; falta identificar o ambiente TorricoDev pelos canais disponíveis. Nenhuma tarefa foi criada ainda. A próxima execução deve partir do ambiente Cloud correto; não repetir esta etapa supondo que uma instrução no chat migre o executor.
 
 ## Implementação preparada
 
@@ -14,7 +26,7 @@
 - AGENTS.md com modos automáticos Criação, Correção e Auditoria; GDD, decisões, pipeline, especificação e próximos passos.
 - GDD e prompt históricos preservados na raiz.
 
-## Validação desta sessão
+## Validação do bootstrap e rechecagem da Etapa 1
 
 Executor observado: Codex Desktop Windows, workspace local `mark10`, Node fornecido pelo Codex v24.22.1. Sem instalação de dependências/programas ou servidor local. Usuário autorizou o envio do código ao repositório público indicado, em branch separada.
 
