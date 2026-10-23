@@ -37,6 +37,8 @@ Os PNGs provisórios receberam uma inspeção estática preliminar. Isso não eq
 
 Usuário criou **TorricoDev** e indicou `https://github.com/TorricoDev/TorricoDev`, branch `main`. O conector confirmou acesso e repositório público contendo apenas README de perfil. Usuário autorizou enviar a base em branch de trabalho `codex/roguelite-bootstrap-2026-10-23`, subpasta `games/reliquias-da-ruina/`, preservando perfil/main e usando PR para revisão. Selecionar essa branch para continuar no Cloud. Ainda não houve execução nessa máquina remota; criar o ambiente não migra automaticamente a conversa ou a pasta local.
 
+Envio realizado: **40 arquivos** na subpasta do jogo, disponíveis no [PR #1 em rascunho](https://github.com/TorricoDev/TorricoDev/pull/1). A árvore remota foi conferida: nenhum arquivo ausente, PNGs presentes e SHA do README de perfil idêntico ao original. Nenhuma exclusão; `main` não foi alterada. O PR aguarda build e validação do runtime no Cloud, sem merge automático.
+
 ## Fora desta etapa
 
 Combate, esquiva, habilidades, mira de mouse, inimigos, chefes, proceduralidade, progressão, save, toque/gamepad, áudio e arte definitiva. O laboratório de animação está especificado, ainda não implementado. Nenhuma run de 5–15 minutos está disponível.

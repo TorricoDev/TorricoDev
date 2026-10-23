@@ -34,7 +34,7 @@
 
 **Fato observado:** esta conversa usa Codex Desktop, Windows, pasta local sem `.git`. Usuário informou o ambiente Cloud **TorricoDev**, repositório **TorricoDev/TorricoDev**, branch **main**. O conector confirmou que o repositório é público e contém somente README de perfil. A criação do ambiente não migra automaticamente o executor desta conversa nem seus arquivos.
 
-Não instalar dependências nem iniciar servidores locais. Usar apenas o Node incluído no Codex para verificações sem dependências; build e runtime ficam pendentes para Cloud. Usuário autorizou explicitamente esse destino público. A base será enviada na branch `codex/roguelite-bootstrap-2026-10-23`, em `games/reliquias-da-ruina/`, para revisão por PR, preservando README e main. Não confundir publicação de ambiente de desenvolvimento com publicação pública do jogo.
+Não instalar dependências nem iniciar servidores locais. Usar apenas o Node incluído no Codex para verificações sem dependências; build e runtime ficam pendentes para Cloud. Usuário autorizou explicitamente esse destino público. A base foi enviada na branch `codex/roguelite-bootstrap-2026-10-23`, em `games/reliquias-da-ruina/`, no [PR #1](https://github.com/TorricoDev/TorricoDev/pull/1), preservando README e main. Não confundir publicação de ambiente de desenvolvimento com publicação pública do jogo.
 
 ## Fontes técnicas consultadas
 
