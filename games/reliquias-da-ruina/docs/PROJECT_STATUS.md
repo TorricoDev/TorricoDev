@@ -37,7 +37,7 @@ Runtime: Node v24.19.0, npm 11.9.0, Phaser 3.90.0, Vite 7.3.7, Playwright 1.64.1
 
 O navegador é Chromium headless remoto. As capturas foram inspecionadas, e os controles foram efetivamente acionados por Playwright; não houve uma pessoa jogando por prévia encaminhada nem avaliação humana contínua da fluidez. As ferramentas desta tarefa não oferecem essa prévia interativa. Não foram testados outros navegadores, dispositivos físicos ou controles de toque/gamepad.
 
-O PR #1 é o destino dos documentos, lockfile, correções e evidências. Mantê-lo em rascunho para revisão humana, sem merge automático. A página pública confirmou o rascunho; a API de comentários/descrição foi bloqueada pelo proxy (CONNECT HTTP 403 para `api.github.com`). O envio à branch deve ser confirmado por Git; não confundir esse envio com alteração da descrição do PR.
+O commit de implementação e evidências `b63804192f3b0dd27e28588e69981db41d3e6b41` foi enviado à branch do PR #1. O head da branch e `refs/pull/1/head` coincidiram após o envio, e a página pública confirmou `DRAFT`. Mantê-lo em rascunho para revisão humana, sem merge automático; a API de comentários/descrição foi bloqueada pelo proxy (CONNECT HTTP 403 para `api.github.com`). Os resultados estão nos arquivos versionados do PR; não houve alteração de sua descrição ou comentário por API.
 
 ## Escopo preservado
 
