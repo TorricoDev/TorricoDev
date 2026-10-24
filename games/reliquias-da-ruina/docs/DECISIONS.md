@@ -66,6 +66,22 @@ O teste original de orientação falhou NE→E: as duas chamadas de soltura de t
 
 `Player.reset()` agora chama a API `updateFromGameObject()` depois de `reset()`, sincronizando as posições públicas `prev` e `prevFrame` para não acrescentar um deslocamento artificial em `postUpdate`. Preserva o corpo 12×8, offset [18,32], pivô, velocidades e animações. A regressão compara o recorte dos pés antes/depois de F1 com o jogo pausado: deve haver o traço da hitbox em [154,108]–[166,116] no spawn. O teste falhou na versão anterior; a revalidação final está registrada no relatório Cloud.
 
+## D013 — Laboratório em cena e rota próprias
+
+**Origem:** Etapa 2 solicitada pelo usuário. `?view=animations` abre `AnimationLabScene`; `?view=room` ou a entrada padrão abre `TestRoomScene`. Navegação explícita recarrega a aplicação e ativa somente a cena escolhida. O laboratório cria sprites comuns, não corpos Arcade. A resolução continua 320×180, com galeria de quatro colunas/duas linhas na ordem canônica. O zoom manual 1×–8× é independente do ajuste automático da sala e permanece inteiro após resize; escalas grandes usam rolagem.
+
+## D014 — Controles de inspeção estendem o driver existente
+
+**Escolha de implementação:** `AnimationDriver` ganhou pausa, retomada, quadro atual, seleção/avanço de quadro e `timeScale` por instância. Phaser continua sendo o único relógio de animação. Não se duplicam playback, linhas de sheet ou resolução de aliases na cena. `play(action, facing)` mantém a semântica anterior, e a regressão da sala foi executada.
+
+A timeline e o avanço manual pausam, circulam nos extremos e mantêm as oito orientações sincronizadas. Trocar de ação/personagem volta ao primeiro quadro, preservando pausa e multiplicador. Os FPS originais e loops do manifest/registro global permanecem inalterados; a UI mostra original e efetivo. A hitbox é uma guia que referencia `PLAYER_BODY`; não altera física ou alpha. Grade, pivô e baseline vêm da geometria declarada no manifest.
+
+## D015 — Catálogo compartilhado preserva o schema v1 e a arte existente
+
+`actor-catalog.js` descobre e valida os manifests JSON e seleciona a categoria corporal, com IDs únicos. Boot e laboratório usam os mesmos objetos e o mesmo registro de animações. O seletor está implementado, mas há apenas `traveler-placeholder` disponível: não criar cópias de arte para simular variedade. Novos personagens exigem novos assets compatíveis e validação, sem duplicar o controlador. Um ator sem perfil físico conhecido exibe essa ausência e não desenha hitbox.
+
+**Evidência da Etapa 2:** 31 testes Node, 30 quadros e build aprovados; 18 testes de navegador sobre produção (7 do laboratório + 11 da sala) sem erros de console/JavaScript. Os testes conferem quadros reais, aliases, velocidade, guias por diferença de pixels, fundos, zoom e navegação. A primeira execução foi interrompida após diagnosticar rótulos ambíguos nos selects; labels explícitos corrigiram a associação. A captura DPR 2 também ganhou enquadramento/checagem de dimensões para evitar evidência cortada. Ver [relatório da Etapa 2](evidence/2026-10-23-stage-2-animation-lab.md).
+
 ## Fontes técnicas consultadas
 
 - [Phaser 3.90.0 — Arcade Body](https://github.com/phaserjs/phaser/blob/v3.90.0/src/physics/arcade/Body.js), conferido também no pacote instalado para `reset`, `updateFromGameObject` e `postUpdate`.

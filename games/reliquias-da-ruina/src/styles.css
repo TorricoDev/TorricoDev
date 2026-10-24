@@ -1,5 +1,6 @@
 :root { color-scheme: dark; font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; color: #dce4d6; background: #101b20; }
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 body { margin: 0; min-width: 320px; background: radial-gradient(ellipse at 50% 0%, #243b38 0%, #101b20 65%); min-height: 100svh; }
 .workbench { max-width: 1120px; padding: 44px 32px 24px; margin: auto; }
 .masthead, .room-bar, .controls, .telemetry { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
@@ -30,4 +31,42 @@ button { font: inherit; color: #cad7b6; border: 1px solid #42564e; background: #
 button:hover, button:focus-visible { background: #344c3c; outline-color: #d7bc7c; }
 button kbd { margin-left: 9px; font-size: 9px; }
 .scope-note { font-size: 10px; margin-top: 22px; line-height: 1.8; }
+.view-nav { display: flex; gap: 24px; border-bottom: 1px solid #34473e; margin: 0 0 22px; font-size: 11px; }
+.view-nav a { color: #90a79e; text-decoration: none; padding: 0 0 13px; border-bottom: 2px solid transparent; }
+.view-nav a[aria-current="page"] { color: #d6decb; border-color: #c9ad73; }
+.view-nav a:hover { color: #e6e7d6; }
+.lab-toolbar { display: flex; flex-wrap: wrap; align-items: end; gap: 16px; padding: 18px; border: 1px solid #34473e; background: #152521; }
+.lab-field { display: flex; flex-direction: column; gap: 9px; font-size: 10px; color: #a2b698; }
+.lab-field:first-child { flex: 1; min-width: 220px; }
+select { font: inherit; font-size: 12px; border: 1px solid #42564e; border-radius: 0; color: #dce4d6; background: #20332d; padding: 9px 28px 9px 10px; }
+input[type="range"] { accent-color: #c9ad73; cursor: pointer; min-width: 0; }
+input[type="checkbox"] { accent-color: #c9ad73; }
+.lab-zoom { width: 150px; position: relative; }
+.lab-zoom output { position: absolute; right: 0; }
+.lab-zoom input { height: 34px; margin: 0; }
+.lab-playback { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; padding: 18px 0; }
+.lab-transport { display: flex; gap: 6px; }
+.lab-transport button { min-width: 38px; font-size: 12px; }
+#lab-play { min-width: 110px; color: #e9ddbb; border-color: #8c7952; }
+.lab-timeline { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 220px; font-size: 10px; }
+.lab-timeline input { flex: 1; }
+.lab-timeline output { min-width: 50px; color: #d6decb; }
+#lab-status { color: #bdc999; font-size: 10px; min-width: 100px; text-align: right; }
+.lab-guides { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; font-size: 10px; margin: 0 0 16px; }
+.lab-guides label { display: flex; align-items: center; gap: 4px; cursor: pointer; }
+.lab-guides .muted { margin-left: auto; }
+.guide-pivot { color: #ec957c; }.guide-baseline { color: #69b5a8; }.guide-hitbox { color: #dfbb6d; }
+#lab-viewport { position: relative; overflow: auto; max-height: 640px; padding: 18px; background: #0b1419; }
+#lab-game { width: max-content; margin: auto; }
+#lab-loading-message { font-size: 12px; text-align: center; }
+#lab-directions { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 0; padding: 0; border-top: 1px solid #34473e; }
+#lab-directions li { display: grid; grid-template-columns: 25px 1fr auto; gap: 6px; align-items: center; padding: 11px 12px; font-size: 9px; border-bottom: 1px solid #253a32; }
+#lab-directions strong { color: #d6decb; font-size: 10px; }
+#lab-directions span { color: #90a79e; }
+#lab-directions output { color: #c9ad73; }
+.lab-metadata { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px 18px; margin: 24px 0 0; }
+.lab-metadata dt { color: #829a90; font-size: 9px; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 9px; }
+.lab-metadata dd { font-size: 11px; margin: 0; line-height: 1.7; color: #cbd8c1; }
+.lab-body-info { grid-column: span 2; }
+@media (max-width: 650px) { .view-nav { gap: 18px; font-size: 10px; }.lab-toolbar { gap: 12px; padding: 12px; }.lab-field:first-child { min-width: 100%; }.lab-guides .muted { margin-left: 0; }.lab-metadata { grid-template-columns: repeat(2, 1fr); }#lab-directions { grid-template-columns: repeat(2, 1fr); }#lab-viewport { padding: 8px; }.lab-playback { gap: 12px; } }
 @media (max-width: 650px) { .workbench { padding: 24px 12px; } .masthead, .controls { flex-direction: column; align-items: flex-start; } .build-tag { margin-top: 8px; } .room-bar { font-size: 8px; gap: 8px; padding: 0 10px; } .telemetry { gap: 12px; } #game-viewport { justify-items: start; } }

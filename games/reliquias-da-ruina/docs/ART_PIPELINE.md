@@ -29,7 +29,7 @@ As três últimas categorias são convenções planejadas. O importador e valida
 3. Exportar a ação em PNG e registrar célula, pivô, linhas, contagem, FPS, loop, alpha e origem no manifest.
 4. Validar com `npm run validate:assets`. O comando lê todos os manifests JSON em `src/assets/` e os PNGs correspondentes.
 5. Carregar pelo registro de animações. Somente conjuntos simétricos permitem `mirrorSafe` e aliases; não espelhar armas assimétricas ou trocar a mão dominante sem uma decisão explícita.
-6. Rever em movimento no navegador e, futuramente, no laboratório; conferir as oito orientações, contraste, alinhamento, recortes e equipamento. Registrar aprovação humana antes de chamar arte de definitiva.
+6. Rever em movimento no navegador e no laboratório; conferir as oito orientações, contraste, alinhamento e recortes. Equipamento continua fora da visualização desta etapa. Registrar aprovação humana antes de chamar arte de definitiva.
 
 Os arquivos-fonte editáveis poderão entrar em `art/source/` e paletas em `art/palettes/` quando existirem. Não há dependência de editor de arte instalado no computador do usuário.
 
@@ -42,8 +42,8 @@ Os arquivos-fonte editáveis poderão entrar em `art/source/` e paletas em `art/
 
 Esses checks não detectam um rosto voltado para o lado errado, inversão de mão, pé deslizando, cintilação, paleta ruim ou animação pouco expressiva. Também não substituem a revisão visual. Montador geral, detecção de paleta e relatório de ocupação ficam para a etapa de arte real.
 
-## Laboratório visual planejado
+## Laboratório visual disponível
 
-Uma cena futura `AnimationLabScene`, reutilizando manifest e AnimationDriver, terá seleção de ator/ação/direção, playback, avanço de um quadro, multiplicador de velocidade, zoom 1×/2×/4×, fundos claro/escuro/quadriculado, grade, célula/pivô/colisão e galeria das oito direções. Mostrar bases espelhadas e permitir alternar corpo/arma/efeitos para diagnosticar alinhamento. Laboratório ainda não implementado.
+`AnimationLabScene` reutiliza manifests e AnimationDriver, com seleção de ator/ação, oito direções simultâneas, playback, pausa e avanço de um quadro, multiplicador local de velocidade e zoom inteiro de 1× a 8×. Fundos claro/escuro/quadriculado e guias de grade, pivô, baseline e hitbox ajudam a inspecionar o corpo provisório. A UI informa quadros, FPS, dimensões, alpha e espelhamentos. A seleção de arma/efeitos continua futura; não há arte definitiva. Ver [guia de uso](ANIMATION_LAB.md).
 
 [Referência SLYNYRD](https://www.slynyrd.com/blog/2025/3/24/pixelblog-55-top-down-character-animation): material de estudo de animação direcional; não reutilizar os assets sem licença.

@@ -38,4 +38,10 @@ AnimationDriver não altera velocidade, caixa de colisão, dano ou câmera. A f�
 - Armas com pivôs/offsets próprios e política de espelhamento independente. Efeitos em camada separada, sem alterar o corpo ou inferir sua colisão.
 - Migração versionada do manifest antes de adicionar duração variável de frames, ações sem oito direções ou eventos. O schema v1 não declara suporte a esses recursos.
 
-Validação estrutural está automatizada. Fluidez, direção e nitidez em movimento ainda dependem de revisão visual no Cloud.
+## Inspeção no laboratório
+
+`AnimationLabScene` reutiliza o mesmo `AnimationDriver` e os manifests v1, com oito direções simultâneas. O driver oferece pausa/retomada, seleção e avanço de quadro, além de `timeScale` local por sprite. Nada disso altera FPS original, loops, texturas, pivôs ou física. A sala continua usando `play(action, facing)` com sua semântica anterior.
+
+O laboratório mostra as bases espelhadas e o frame efetivo de cada animação. Grade, baseline, pivô e hitbox de referência são guias visuais separadas. Ver [controles e limites](ANIMATION_LAB.md).
+
+Validação estrutural está automatizada. A inspeção das capturas não substitui a aprovação humana contínua de fluidez e direção da arte.

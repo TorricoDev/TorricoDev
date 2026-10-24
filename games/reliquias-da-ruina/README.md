@@ -1,10 +1,10 @@
 # Relíquias da Ruína
 
-Protótipo inicial de roguelite medieval em **Phaser 3 + JavaScript + Vite**. Uma sala fixa, personagem provisório, movimento em oito direções, colisões e animações configuradas por manifest. Etapa 1 validada no Cloud; combate e progressão ainda não implementados.
+Protótipo inicial de roguelite medieval em **Phaser 3 + JavaScript + Vite**. Uma sala fixa e um laboratório de animações separado, com personagem provisório e contratos compartilhados. Movimento em oito direções, colisões e animações configuradas por manifest; combate e progressão ainda não implementados.
 
 ## Situação da entrega
 
-A sala foi instalada, compilada e controlada por Playwright em Chromium real no executor Linux do Codex Cloud, na branch `codex/roguelite-bootstrap-2026-10-23`. A evidência anterior no Desktop continua registrada como histórico; veja [o relatório Cloud](docs/evidence/2026-10-23-stage-1-cloud.md) e [o estado atual](docs/PROJECT_STATUS.md).
+A sala e o Laboratório de Animações foram executados em Chromium real no Codex Cloud, na branch `codex/roguelite-bootstrap-2026-10-23`. Na Etapa 2 passaram 31 testes Node e 18 testes de navegador, além de check, validação de assets e build. Veja [o relatório do laboratório](docs/evidence/2026-10-23-stage-2-animation-lab.md), [o estado atual](docs/PROJECT_STATUS.md) e a [validação anterior da sala](docs/evidence/2026-10-23-stage-1-cloud.md).
 
 Destino: repositório `TorricoDev/TorricoDev`, pasta `games/reliquias-da-ruina/`, [PR #1](https://github.com/TorricoDev/TorricoDev/pull/1). O conector desta tarefa identifica o ambiente como **TorricoDev**; documentos históricos registram também o nome Mark10. Confira o vínculo do executor e a branch, sem depender apenas do nome exibido. O README de perfil e a `main` continuam preservados.
 
@@ -42,6 +42,8 @@ Para continuar pelo celular, selecionar o ambiente Cloud já configurado e envia
 
 ## Controles
 
+Na aplicação, **01 / Sala jogável** abre a sala; **02 / Laboratório de animações** abre a galeria em `?view=animations`. O laboratório oferece as oito direções simultâneas, pausa, seleção/avanço de quadros, velocidade local, zoom inteiro de 1× a 8×, três fundos e guias de grade/pivô/baseline/hitbox. Existe hoje apenas um personagem no catálogo. Veja [como abrir e usar o laboratório](docs/ANIMATION_LAB.md).
+
 | Entrada | Ação |
 | --- | --- |
 | WASD ou setas | Movimento normalizado em oito direções |
@@ -57,13 +59,13 @@ Nesta etapa o jogo exige teclado. Desenvolvimento pelo celular é possível no C
 ```text
 src/
   main.js                 inicialização e escala inteira
-  scenes/                 carregamento e sala de testes
+  scenes/                 carregamento, sala de testes e laboratório separado
   core/                   direção, estados e contrato de animação (sem Phaser)
   input/                  adaptador de teclado
   entities/               jogador e camadas visuais
   animation/              registro e reprodução por manifest
   rooms/                  template e colisores da sala
-  assets/traveler.json    contrato dos spritesheets provisórios
+  assets/                 manifests e catálogo compartilhado de personagens
 public/assets/actors/     PNGs RGBA originais gerados no projeto
 tools/                    geração, codec PNG e validadores sem dependências
 tests/                    testes de lógica/arte e integração de navegador

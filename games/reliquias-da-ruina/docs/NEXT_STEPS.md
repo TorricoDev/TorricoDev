@@ -1,17 +1,17 @@
 # Próximos passos
 
-## 1. Iniciar o Laboratório de Animações
+## 1. Revisar o Laboratório de Animações entregue
 
-A Etapa 1 cumpriu os critérios técnicos no Cloud: instalação reproduzível, lockfile, check, 26 testes de lógica/arte, 30 quadros validados, build e 11 testes de navegador sobre o build final. O personagem foi controlado por Playwright em Chromium remoto. Ver [estado atual](PROJECT_STATUS.md) e [evidências](evidence/2026-10-23-stage-1-cloud.md).
+Etapa 2 concluída tecnicamente: cena separada, oito orientações, seleção de personagem/ação, playback, quadros, velocidade local, zoom 1×–8×, fundos, guias e metadados. A suíte final passou em 31 testes Node e 18 de navegador, além de check, assets e build. [Guia de uso](ANIMATION_LAB.md) e [evidências reais](evidence/2026-10-23-stage-2-animation-lab.md).
 
-Após o pedido do usuário, criar uma cena com seleção de ator/ação/direção, galeria das oito orientações, grade/pivô/hitbox, frame stepping, playback, zoom inteiro e fundos variados. Reutilizar manifest e AnimationDriver. Não implementar combate ou substituir os placeholders por arte definitiva nessa tarefa inicial.
+Revisar o laboratório com o usuário antes de ampliar o escopo. Quando houver prévia interativa encaminhada no Cloud, realizar a avaliação humana contínua de fluidez, silhueta e legibilidade. Essa avaliação não foi substituída pelas capturas e pela automação. O catálogo contém apenas o viajante provisório; outros atores e navegadores permanecem sem teste.
 
 ## 2. Revisão humana e PR #1
 
 - Manter o PR #1 em rascunho e sem merge automático até a revisão. Correções, lockfile e resultados ficam versionados na branch `codex/roguelite-bootstrap-2026-10-23`.
 - As ferramentas atuais não oferecem prévia encaminhada para uma pessoa jogar. Quando disponível no Cloud, rever resposta dos controles, fluidez, silhueta e oclusão ao passar diante/atrás dos pilares. Essa revisão humana não foi realizada pela automação.
 - Outros navegadores, DPRs fracionários e dispositivos físicos permanecem sem teste. Toque e gamepad não pertencem ao escopo atual.
-- A API GitHub retornou CONNECT HTTP 403 para `api.github.com`; comentários e descrição do PR precisam desse destino liberado nas configurações de rede. O acesso Git à branch é uma operação distinta.
+- O acesso à API GitHub voltou a responder nesta etapa. Registrar a entrega no PR existente, mantendo o rascunho; o erro CONNECT 403 permanece apenas no histórico da Etapa 1.
 - Não otimizar ou reestruturar o bundle apenas pelo aviso do Phaser de chunk >500 kB; medir necessidades antes de uma tarefa específica de desempenho.
 
 ## 3. Reproduzir a validação no Cloud

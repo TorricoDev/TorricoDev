@@ -1,0 +1,126 @@
+
+> reliquias-da-ruina@0.1.0 test:browser
+> playwright test animation-lab.spec.js --reporter=line
+
+
+Running 7 tests using 1 worker
+
+(node:16247) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/7] tests/browser/animation-lab.spec.js:29:1 › catalog loads the shared actor, metadata and eight real directional animations
+  1) tests/browser/animation-lab.spec.js:29:1 › catalog loads the shared actor, metadata and eight real directional animations
+
+    Error: expect(locator).toHaveValue(expected) failed
+
+    Locator: getByLabel('Personagem')
+    Expected: "traveler-placeholder"
+    Error: strict mode violation: getByLabel('Personagem') resolved to 2 elements:
+        1) <div class="telemetry" aria-label="Estado do personagem">…</div> aka getByLabel('Estado do personagem')
+        2) <select id="lab-actor">…</select> aka getByLabel('Personagemtraveler-placeholder')
+
+    Call log:
+      - Expect "toHaveValue" getByLabel('Personagem') with timeout 5000ms
+      - waiting for getByLabel('Personagem')
+
+
+      30 |   await expect(page.locator('#room-view')).toBeHidden();
+      31 |   await expect(page.getByRole('link', { name: '02 / Laboratório de animações' })).toHaveAttribute('aria-current', 'page');
+    > 32 |   await expect(page.getByLabel('Personagem')).toHaveValue('traveler-placeholder');
+         |                                               ^
+      33 |   await page.getByLabel('Personagem').selectOption('traveler-placeholder');
+      34 |   await expect(page.getByLabel('Animação', { exact: true })).toHaveValue('idle');
+      35 |   await expect(page.locator('#lab-cell')).toHaveText('48 × 48 px');
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/animation-lab.spec.js:32:47
+
+    Error Context: test-results/animation-lab-catalog-load-d7946-real-directional-animations/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/animation-lab-catalog-load-d7946-real-directional-animations/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/animation-lab-catalog-load-d7946-real-directional-animations/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:16386) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/7] tests/browser/animation-lab.spec.js:51:1 › pause, resume, bidirectional stepping and timeline select actual sheet frames
+  2) tests/browser/animation-lab.spec.js:51:1 › pause, resume, bidirectional stepping and timeline select actual sheet frames
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('Animação', { exact: true })
+
+
+      50 |
+      51 | test('pause, resume, bidirectional stepping and timeline select actual sheet frames', async ({ page }, testInfo) => {
+    > 52 |   await page.getByLabel('Animação', { exact: true }).selectOption('move');
+         |                                                      ^
+      53 |   await paused(page);
+      54 |   expect(await frames(page)).toEqual(Array(8).fill(0));
+      55 |   const image = await canvasImage(page);
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/animation-lab.spec.js:52:54
+
+    Error Context: test-results/animation-lab-pause-resume-2dbea--select-actual-sheet-frames/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/animation-lab-pause-resume-2dbea--select-actual-sheet-frames/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/animation-lab-pause-resume-2dbea--select-actual-sheet-frames/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:16527) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/7] tests/browser/animation-lab.spec.js:80:1 › playback speed changes observed frames without changing the original FPS
+  3) tests/browser/animation-lab.spec.js:80:1 › playback speed changes observed frames without changing the original FPS
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('Animação', { exact: true })
+
+
+      82 |   for (const speed of ['0.25', '2']) {
+      83 |     await page.getByLabel('Velocidade').selectOption(speed);
+    > 84 |     await page.getByLabel('Animação', { exact: true }).selectOption('idle');
+         |                                                        ^
+      85 |     await page.getByLabel('Animação', { exact: true }).selectOption('move');
+      86 |     await page.clock.runFor(160);
+      87 |     results.push((await frames(page))[0]);
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/animation-lab.spec.js:84:56
+
+    Error Context: test-results/animation-lab-playback-spe-5f226-t-changing-the-original-FPS/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/animation-lab-playback-spe-5f226-t-changing-the-original-FPS/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/animation-lab-playback-spe-5f226-t-changing-the-original-FPS/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:16676) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/7] tests/browser/animation-lab.spec.js:97:1 › grid, pivot, baseline, hitbox and three backgrounds change rendered pixels
+Terminated
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

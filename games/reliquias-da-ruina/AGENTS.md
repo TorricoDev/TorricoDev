@@ -2,7 +2,7 @@
 
 ## Fonte da verdade e escopo
 
-Leia `docs/PROJECT_STATUS.md`, `docs/DECISIONS.md` e a documentação do sistema alterado antes de editar. O pedido atual do usuário prevalece sobre propostas antigas. Os dois documentos históricos na raiz são preservados; suas referências a Godot e ao vertical slice inteiro foram substituídas pela decisão D001. A etapa atual é uma sala de testes com Phaser, JavaScript e Vite.
+Leia `docs/PROJECT_STATUS.md`, `docs/DECISIONS.md` e a documentação do sistema alterado antes de editar. O pedido atual do usuário prevalece sobre propostas antigas. Os dois documentos históricos na raiz são preservados; suas referências a Godot e ao vertical slice inteiro foram substituídas pela decisão D001. A base atual inclui uma sala de testes e um Laboratório de Animações separado, com Phaser, JavaScript e Vite. O laboratório reutiliza manifests e AnimationDriver, sem modificar a física para inspeção.
 
 ## Modos operacionais automáticos
 
