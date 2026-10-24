@@ -1,0 +1,38 @@
+
+> reliquias-da-ruina@0.1.0 test:browser
+> playwright test --reporter=line,json
+
+
+Running 18 tests using 1 worker
+
+(node:18344) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/18] tests/browser/animation-lab.spec.js:30:1 › catalog loads the shared actor, metadata and eight real directional animations
+[2/18] tests/browser/animation-lab.spec.js:52:1 › pause, resume, bidirectional stepping and timeline select actual sheet frames
+[3/18] tests/browser/animation-lab.spec.js:87:1 › playback speed changes observed frames without changing the original FPS
+[4/18] tests/browser/animation-lab.spec.js:106:1 › grid, pivot, baseline, hitbox and three backgrounds change rendered pixels
+[5/18] tests/browser/animation-lab.spec.js:132:1 › all zoom values 1×–8× preserve logical resolution and allow scrolling
+[6/18] tests/browser/animation-lab.spec.js:150:1 › navigation returns to a playable room and reopens an independent laboratory
+[7/18] tests/browser/animation-lab.spec.js:168:3 › small screen and DPR 2 › 1× retains eight directions and sharp pixels
+[8/18] tests/browser/room.spec.js:51:1 › boots without runtime errors and preserves a 320×180 canvas with integer zoom
+[9/18] tests/browser/room.spec.js:58:1 › walks in eight directions at normalized speed, then retains facing while idle
+tests/browser/room.spec.js:58:1 › walks in eight directions at normalized speed, then retains facing while idle
+Eight-direction displacement: [{"facing":"N","dx":0,"dy":-33.599999999999994,"distance":33.599999999999994},{"facing":"NE","dx":23.758999999999986,"dy":-23.759,"distance":33.60030002842236},{"facing":"E","dx":33.599999999999994,"dy":0,"distance":33.599999999999994},{"facing":"SE","dx":23.758999999999986,"dy":23.758999999999986,"distance":33.600300028422346},{"facing":"S","dx":0,"dy":33.599999999999994,"distance":33.599999999999994},{"facing":"SW","dx":-22.909999999999997,"dy":22.909999999999997,"distance":32.399632713967605},{"facing":"W","dx":-33.599999999999994,"dy":0,"distance":33.599999999999994},{"facing":"NW","dx":-22.909999999999997,"dy":-22.909999999999997,"distance":32.399632713967605}]
+
+[10/18] tests/browser/room.spec.js:88:1 › collides with world bounds and altar
+[11/18] tests/browser/room.spec.js:96:1 › pause freezes physics, reset returns to spawn, focus loss releases keys
+[12/18] tests/browser/room.spec.js:115:1 › arrow keys move and opposing keys cancel
+[13/18] tests/browser/room.spec.js:125:1 › all four walls stop the foot collider
+[14/18] tests/browser/room.spec.js:138:1 › all five obstacles block the player on approach
+[15/18] tests/browser/room.spec.js:159:1 › idle and held movement advance visible frames; pause freezes playback
+[16/18] tests/browser/room.spec.js:182:1 › buttons, Escape, paused reset and collision overlay work
+[17/18] tests/browser/room.spec.js:213:5 › DPR 1 › resizes at integer 1×/2×/3× without smoothing or shrinking
+[18/18] tests/browser/room.spec.js:213:5 › DPR 2 › resizes at integer 1×/2×/3× without smoothing or shrinking
+  18 passed (46.0s)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

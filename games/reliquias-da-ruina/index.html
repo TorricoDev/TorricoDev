@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101b20" />
+    <link rel="icon" href="data:," />
+    <title>Relíquias da Ruína · Sala de testes</title>
+  </head>
+  <body>
+    <main class="workbench">
+      <header class="masthead">
+        <div><p class="eyebrow">PROTÓTIPO 001 / BOSQUE DAS RUÍNAS</p><h1>Relíquias da Ruína<span id="view-subtitle">Laboratório de movimento</span></h1></div>
+        <span class="build-tag">ETAPA 2 <i></i> ARTE PROVISÓRIA</span>
+      </header>
+      <nav class="view-nav" aria-label="Áreas do protótipo">
+        <a href="?view=room" data-view="room">01 / Sala jogável</a>
+        <a href="?view=animations" data-view="animations">02 / Laboratório de animações</a>
+      </nav>
+      <div id="room-view">
+      <section class="game-card" aria-label="Sala de testes interativa">
+        <div class="room-bar"><span>01 <b>PÁTIO ESQUECIDO</b></span><span>CÂMERA FIXA · 320 × 180</span></div>
+        <div id="game-viewport"><div id="game"></div><p id="loading-message" role="status">Preparando a sala…</p></div>
+        <div class="telemetry" aria-label="Estado do personagem">
+          <span>ESTADO <strong id="player-state">—</strong></span><span>DIREÇÃO <strong id="player-facing">—</strong></span><span>POSIÇÃO <strong id="player-position" data-x="0" data-y="0">—</strong></span><span id="game-status" role="status">CARREGANDO</span>
+        </div>
+      </section>
+      <footer class="controls">
+        <div><p><kbd>W A S D</kbd> / <kbd>↑ ← ↓ →</kbd> Mover <span class="separator">/</span> <kbd>F1</kbd> Colisões</p><p class="muted">Oito direções. Pixels inteiros. Um passo de cada vez.</p></div>
+        <div class="actions"><button id="pause-button" type="button">Pausar <kbd>P</kbd></button><button id="reset-button" type="button">Reiniciar <kbd>R</kbd></button></div>
+      </footer>
+      <p class="scope-note">Sala técnica com obstáculos sólidos. Combate, esquiva e progressão entram nas próximas etapas.</p>
+      </div>
+      <section id="animation-lab" hidden aria-label="Laboratório de animações">
+        <div class="lab-toolbar">
+          <div class="lab-field"><label for="lab-actor">Personagem</label><select id="lab-actor"></select></div>
+          <div class="lab-field"><label for="lab-action">Animação</label><select id="lab-action"></select></div>
+          <div class="lab-field"><label for="lab-speed">Velocidade</label><select id="lab-speed"><option value="0.25">0,25×</option><option value="0.5">0,5×</option><option value="1" selected>1×</option><option value="1.5">1,5×</option><option value="2">2×</option><option value="4">4×</option></select></div>
+          <div class="lab-field lab-zoom"><label for="lab-zoom">Zoom</label><output id="lab-zoom-label" for="lab-zoom">3×</output><input id="lab-zoom" type="range" min="1" max="8" step="1" value="3" /></div>
+          <div class="lab-field"><label for="lab-background">Fundo</label><select id="lab-background"><option value="checker">Quadriculado</option><option value="dark">Escuro</option><option value="light">Claro</option></select></div>
+        </div>
+        <div class="lab-playback">
+          <div class="lab-transport"><button id="lab-play" type="button">Pausar</button><button id="lab-previous" type="button" aria-label="Quadro anterior">←</button><button id="lab-next" type="button" aria-label="Próximo quadro">→</button></div>
+          <div class="lab-timeline"><label for="lab-frame">Quadro</label><input id="lab-frame" type="range" min="0" max="1" step="1" value="0" /><output id="lab-frame-label" for="lab-frame">01 / 02</output></div>
+          <span id="lab-status" role="status">CARREGANDO</span>
+        </div>
+        <div class="lab-guides" role="group" aria-label="Guias de inspeção">
+          <label><input id="lab-grid" type="checkbox" /> Grade de 8 px</label>
+          <label><input id="lab-pivot" type="checkbox" checked /> <span class="guide-pivot">Pivô</span></label>
+          <label><input id="lab-baseline" type="checkbox" /> <span class="guide-baseline">Baseline</span></label>
+          <label><input id="lab-hitbox" type="checkbox" /> <span class="guide-hitbox">Hitbox</span></label>
+          <span class="muted">As oito direções usam o mesmo quadro.</span>
+        </div>
+        <div class="game-card lab-preview">
+          <div class="room-bar"><span>GALERIA DIRECIONAL <b>8 ORIENTAÇÕES</b></span><span>320 × 180 · PIXELS INTEIROS</span></div>
+          <div id="lab-viewport"><div id="lab-game"></div><p id="lab-loading-message" role="status">Preparando as animações…</p></div>
+          <ul id="lab-directions" aria-label="Informações das oito direções"></ul>
+        </div>
+        <dl class="lab-metadata" aria-label="Dados do spritesheet">
+          <div><dt>Célula</dt><dd id="lab-cell">—</dd></div><div><dt>Spritesheet</dt><dd id="lab-sheet">—</dd></div><div><dt>FPS</dt><dd id="lab-fps">—</dd></div><div><dt>Quadros</dt><dd id="lab-frames">—</dd></div>
+          <div><dt>Espelhamento</dt><dd id="lab-mirrors">—</dd></div><div><dt>Transparência</dt><dd id="lab-alpha">—</dd></div><div class="lab-body-info"><dt>Hitbox do jogo</dt><dd id="lab-body">—</dd></div>
+        </dl>
+        <p class="scope-note">Use o fundo quadriculado para inspecionar transparência; a grade marca a célula e os intervalos de 8 pixels. Pivô, baseline e hitbox ajudam a comparar alinhamento e cortes. Avançar um quadro pausa a reprodução. A velocidade de teste não altera o FPS original.</p>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+$ npm test
+
+> reliquias-da-ruina@0.1.0 test
+> node --test tests/*.test.js
+
+✔ frame stepping wraps in both directions, including single-frame clips (0.922606ms)
+✔ frame stepping rejects invalid indices and frame counts (0.354044ms)
+✔ manual zoom permits exactly the eight integer scales (1.901014ms)
+✔ all eight cells fit the 320×180 gallery and preserve source anchors/collider geometry (1.378732ms)
+✔ missing body profile remains explicit and invalid gallery indices fail (0.184063ms)
+✔ five original rows provide all eight directions using safe horizontal mirrors (1.661179ms)
+✔ animation speed, repeat and frame range come from action data (0.305101ms)
+✔ eight original directions work without mirroring asymmetric art (0.210942ms)
+✔ manifest rejects unsafe mirroring (0.274707ms)
+✔ manifest rejects mirror chains (0.172035ms)
+✔ manifest rejects missing directions (0.205324ms)
+✔ manifest rejects duplicate directions (0.206967ms)
+✔ manifest rejects off-center mirror anchor (0.176231ms)
+✔ manifest rejects wrong cell category (0.133628ms)
+✔ manifest rejects invalid FPS (0.355006ms)
+✔ manifest rejects invalid frame count (0.25616ms)
+✔ manifest rejects path traversal (0.213836ms)
+✔ manifest rejects opaque body alpha policy (0.169871ms)
+✔ manifest rejects wrong vertical pivot (0.190642ms)
+✔ unknown states and orientations fail clearly (0.536335ms)
+✔ tracked sheets match dimensions, alpha, margins and baseline (16.18711ms)
+✔ PNG encoder and decoder preserve exact RGBA, including transparent pixels (1.435245ms)
+✔ PNG parser rejects corrupt, truncated and non-PNG inputs (0.408885ms)
+✔ sheet validation rejects dimensions, alpha blending, cropping, empty frames and foot drift (1.72957ms)
+✔ decoder supports PNG row filters Sub, Up, Average and Paeth used by art exporters (1.759895ms)
+✔ all eight directions preserve the same speed (1.241929ms)
+✔ idle retains facing, with south as the initial direction (0.940322ms)
+✔ opposite keys cancel without NaN (4.188511ms)
+✔ near-horizontal vectors are visually quantized without changing the movement vector (0.174728ms)
+✔ viewport scaling always uses whole pixels, including undersized viewports (0.212535ms)
+✔ room spawn and every static obstacle fit inside room bounds (0.217102ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 166.731722
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+
+Exit status: 0

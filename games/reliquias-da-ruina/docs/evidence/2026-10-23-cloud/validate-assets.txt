@@ -1,0 +1,10 @@
+$ npm run validate:assets
+
+> reliquias-da-ruina@0.1.0 validate:assets
+> node tools/validate-assets.mjs
+
+OK traveler.json/idle: 96×240, 10 quadros
+OK traveler.json/move: 192×240, 20 quadros
+30 quadros validados: RGBA, dimensões, margens, alpha e alinhamento.
+
+Exit status: 0

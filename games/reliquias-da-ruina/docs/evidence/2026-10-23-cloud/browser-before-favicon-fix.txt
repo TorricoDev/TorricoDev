@@ -1,0 +1,434 @@
+
+> reliquias-da-ruina@0.1.0 test:browser
+> playwright test --reporter=line,json
+
+
+Running 11 tests using 1 worker
+
+(node:5586) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/11] tests/browser/room.spec.js:43:1 › boots without runtime errors and preserves a 320×180 canvas with integer zoom
+  1) tests/browser/room.spec.js:43:1 › boots without runtime errors and preserves a 320×180 canvas with integer zoom
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      38 |
+      39 | test.afterEach(async ({ page }) => {
+    > 40 |   expect(runtimeErrors.get(page)).toEqual([]);
+         |                                   ^
+      41 | });
+      42 |
+      43 | test('boots without runtime errors and preserves a 320×180 canvas with integer zoom', async ({ page }, testInfo) => {
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:40:35
+
+    Error Context: test-results/room-boots-without-runtime-1025a-80-canvas-with-integer-zoom/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/room-boots-without-runtime-1025a-80-canvas-with-integer-zoom/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/room-boots-without-runtime-1025a-80-canvas-with-integer-zoom/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:5729) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/11] tests/browser/room.spec.js:50:1 › walks in eight directions at normalized speed, then retains facing while idle
+tests/browser/room.spec.js:50:1 › walks in eight directions at normalized speed, then retains facing while idle
+Eight-direction displacement: [{"facing":"N","dx":0,"dy":-33.599999999999994,"distance":33.599999999999994},{"facing":"NE","dx":23.758999999999986,"dy":-23.759,"distance":33.60030002842236},{"facing":"E","dx":33.599999999999994,"dy":0,"distance":33.599999999999994},{"facing":"SE","dx":23.758999999999986,"dy":23.758999999999986,"distance":33.600300028422346},{"facing":"S","dx":0,"dy":33.599999999999994,"distance":33.599999999999994},{"facing":"SW","dx":-23.758999999999986,"dy":23.758999999999986,"distance":33.600300028422346},{"facing":"W","dx":-32.400000000000006,"dy":0,"distance":32.400000000000006},{"facing":"NW","dx":-23.758999999999986,"dy":-23.759,"distance":33.60030002842236}]
+
+  2) tests/browser/room.spec.js:50:1 › walks in eight directions at normalized speed, then retains facing while idle
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      38 |
+      39 | test.afterEach(async ({ page }) => {
+    > 40 |   expect(runtimeErrors.get(page)).toEqual([]);
+         |                                   ^
+      41 | });
+      42 |
+      43 | test('boots without runtime errors and preserves a 320×180 canvas with integer zoom', async ({ page }, testInfo) => {
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:40:35
+
+    Error Context: test-results/room-walks-in-eight-direct-867c3-n-retains-facing-while-idle/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/room-walks-in-eight-direct-867c3-n-retains-facing-while-idle/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/room-walks-in-eight-direct-867c3-n-retains-facing-while-idle/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:5872) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/11] tests/browser/room.spec.js:80:1 › collides with world bounds and altar
+  3) tests/browser/room.spec.js:80:1 › collides with world bounds and altar ────────────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      38 |
+      39 | test.afterEach(async ({ page }) => {
+    > 40 |   expect(runtimeErrors.get(page)).toEqual([]);
+         |                                   ^
+      41 | });
+      42 |
+      43 | test('boots without runtime errors and preserves a 320×180 canvas with integer zoom', async ({ page }, testInfo) => {
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:40:35
+
+    Error Context: test-results/room-collides-with-world-bounds-and-altar/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/room-collides-with-world-bounds-and-altar/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/room-collides-with-world-bounds-and-altar/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:6014) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/11] tests/browser/room.spec.js:88:1 › pause freezes physics, reset returns to spawn, focus loss releases keys
+  4) tests/browser/room.spec.js:88:1 › pause freezes physics, reset returns to spawn, focus loss releases keys
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      38 |
+      39 | test.afterEach(async ({ page }) => {
+    > 40 |   expect(runtimeErrors.get(page)).toEqual([]);
+         |                                   ^
+      41 | });
+      42 |
+      43 | test('boots without runtime errors and preserves a 320×180 canvas with integer zoom', async ({ page }, testInfo) => {
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:40:35
+
+    Error Context: test-results/room-pause-freezes-physics-4d033-wn-focus-loss-releases-keys/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/room-pause-freezes-physics-4d033-wn-focus-loss-releases-keys/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/room-pause-freezes-physics-4d033-wn-focus-loss-releases-keys/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:6160) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[5/11] tests/browser/room.spec.js:107:1 › arrow keys move and opposing keys cancel
+  5) tests/browser/room.spec.js:107:1 › arrow keys move and opposing keys cancel ───────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      38 |
+      39 | test.afterEach(async ({ page }) => {
+    > 40 |   expect(runtimeErrors.get(page)).toEqual([]);
+         |                                   ^
+      41 | });
+      42 |
+      43 | test('boots without runtime errors and preserves a 320×180 canvas with integer zoom', async ({ page }, testInfo) => {
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:40:35
+
+    Error Context: test-results/room-arrow-keys-move-and-opposing-keys-cancel/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/room-arrow-keys-move-and-opposing-keys-cancel/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/room-arrow-keys-move-and-opposing-keys-cancel/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:6314) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[6/11] tests/browser/room.spec.js:117:1 › all four walls stop the foot collider
+  6) tests/browser/room.spec.js:117:1 › all four walls stop the foot collider ──────────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      38 |
+      39 | test.afterEach(async ({ page }) => {
+    > 40 |   expect(runtimeErrors.get(page)).toEqual([]);
+         |                                   ^
+      41 | });
+      42 |
+      43 | test('boots without runtime errors and preserves a 320×180 canvas with integer zoom', async ({ page }, testInfo) => {
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:40:35
+
+    Error Context: test-results/room-all-four-walls-stop-the-foot-collider/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/room-all-four-walls-stop-the-foot-collider/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/room-all-four-walls-stop-the-foot-collider/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:6458) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[7/11] tests/browser/room.spec.js:130:1 › all five obstacles block the player on approach
+  7) tests/browser/room.spec.js:130:1 › all five obstacles block the player on approach ────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      38 |
+      39 | test.afterEach(async ({ page }) => {
+    > 40 |   expect(runtimeErrors.get(page)).toEqual([]);
+         |                                   ^
+      41 | });
+      42 |
+      43 | test('boots without runtime errors and preserves a 320×180 canvas with integer zoom', async ({ page }, testInfo) => {
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:40:35
+
+    Error Context: test-results/room-all-five-obstacles-block-the-player-on-approach/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/room-all-five-obstacles-block-the-player-on-approach/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/room-all-five-obstacles-block-the-player-on-approach/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:6747) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[8/11] tests/browser/room.spec.js:151:1 › idle and held movement advance visible frames; pause freezes playback
+  8) tests/browser/room.spec.js:151:1 › idle and held movement advance visible frames; pause freezes playback
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      38 |
+      39 | test.afterEach(async ({ page }) => {
+    > 40 |   expect(runtimeErrors.get(page)).toEqual([]);
+         |                                   ^
+      41 | });
+      42 |
+      43 | test('boots without runtime errors and preserves a 320×180 canvas with integer zoom', async ({ page }, testInfo) => {
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:40:35
+
+    Error Context: test-results/room-idle-and-held-movemen-a90bb-ames-pause-freezes-playback/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/room-idle-and-held-movemen-a90bb-ames-pause-freezes-playback/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/room-idle-and-held-movemen-a90bb-ames-pause-freezes-playback/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:6890) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[9/11] tests/browser/room.spec.js:174:1 › buttons, Escape, paused reset and collision overlay work
+  9) tests/browser/room.spec.js:174:1 › buttons, Escape, paused reset and collision overlay work ───
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      38 |
+      39 | test.afterEach(async ({ page }) => {
+    > 40 |   expect(runtimeErrors.get(page)).toEqual([]);
+         |                                   ^
+      41 | });
+      42 |
+      43 | test('boots without runtime errors and preserves a 320×180 canvas with integer zoom', async ({ page }, testInfo) => {
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:40:35
+
+    Error Context: test-results/room-buttons-Escape-paused-reset-and-collision-overlay-work/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/room-buttons-Escape-paused-reset-and-collision-overlay-work/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/room-buttons-Escape-paused-reset-and-collision-overlay-work/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:7042) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[10/11] tests/browser/room.spec.js:203:5 › DPR 1 › resizes at integer 1×/2×/3× without smoothing or shrinking
+  10) tests/browser/room.spec.js:203:5 › DPR 1 › resizes at integer 1×/2×/3× without smoothing or shrinking
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      38 |
+      39 | test.afterEach(async ({ page }) => {
+    > 40 |   expect(runtimeErrors.get(page)).toEqual([]);
+         |                                   ^
+      41 | });
+      42 |
+      43 | test('boots without runtime errors and preserves a 320×180 canvas with integer zoom', async ({ page }, testInfo) => {
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:40:35
+
+    Error Context: test-results/room-DPR-1-resizes-at-inte-399b8-hout-smoothing-or-shrinking/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/room-DPR-1-resizes-at-inte-399b8-hout-smoothing-or-shrinking/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/room-DPR-1-resizes-at-inte-399b8-hout-smoothing-or-shrinking/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:7188) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[11/11] tests/browser/room.spec.js:203:5 › DPR 2 › resizes at integer 1×/2×/3× without smoothing or shrinking
+  11) tests/browser/room.spec.js:203:5 › DPR 2 › resizes at integer 1×/2×/3× without smoothing or shrinking
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      38 |
+      39 | test.afterEach(async ({ page }) => {
+    > 40 |   expect(runtimeErrors.get(page)).toEqual([]);
+         |                                   ^
+      41 | });
+      42 |
+      43 | test('boots without runtime errors and preserves a 320×180 canvas with integer zoom', async ({ page }, testInfo) => {
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:40:35
+
+    Error Context: test-results/room-DPR-2-resizes-at-inte-84a30-hout-smoothing-or-shrinking/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/room-DPR-2-resizes-at-inte-84a30-hout-smoothing-or-shrinking/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/room-DPR-2-resizes-at-inte-84a30-hout-smoothing-or-shrinking/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+  11 failed
+    tests/browser/room.spec.js:43:1 › boots without runtime errors and preserves a 320×180 canvas with integer zoom
+    tests/browser/room.spec.js:50:1 › walks in eight directions at normalized speed, then retains facing while idle
+    tests/browser/room.spec.js:80:1 › collides with world bounds and altar ─────────────────────────
+    tests/browser/room.spec.js:88:1 › pause freezes physics, reset returns to spawn, focus loss releases keys
+    tests/browser/room.spec.js:107:1 › arrow keys move and opposing keys cancel ────────────────────
+    tests/browser/room.spec.js:117:1 › all four walls stop the foot collider ───────────────────────
+    tests/browser/room.spec.js:130:1 › all five obstacles block the player on approach ─────────────
+    tests/browser/room.spec.js:151:1 › idle and held movement advance visible frames; pause freezes playback
+    tests/browser/room.spec.js:174:1 › buttons, Escape, paused reset and collision overlay work ────
+    tests/browser/room.spec.js:203:5 › DPR 1 › resizes at integer 1×/2×/3× without smoothing or shrinking
+    tests/browser/room.spec.js:203:5 › DPR 2 › resizes at integer 1×/2×/3× without smoothing or shrinking
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
