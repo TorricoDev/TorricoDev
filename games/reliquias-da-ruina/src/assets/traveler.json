@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "traveler-placeholder",
+  "category": "body",
+  "cell": [48, 48],
+  "footAnchor": [24, 40],
+  "baselineY": 39,
+  "directions": ["N", "NE", "E", "SE", "S"],
+  "mirrors": { "NW": "NE", "W": "E", "SW": "SE" },
+  "mirrorSafe": true,
+  "alphaMode": "binary",
+  "animations": {
+    "idle": { "file": "assets/actors/traveler/idle.png", "frames": 2, "fps": 4, "loop": true },
+    "move": { "file": "assets/actors/traveler/move.png", "frames": 4, "fps": 10, "loop": true }
+  },
+  "provenance": "Placeholder original gerado por tools/generate-placeholders.mjs; substituir após revisão visual."
+}

@@ -1,0 +1,18 @@
+{
+  "checked_at_utc": "2026-10-25T16:09:10.801218+00:00",
+  "scope": "tools and configuration available to this task",
+  "environment_name": "TorricoDev",
+  "private_port_forwarding_tool_available": false,
+  "preview_url_supplied_by_platform": false,
+  "latest_user_interface_report": "No private preview/ports option appears",
+  "browser_panel_opening_is_port_forwarding": false,
+  "official_docs_request": {
+    "url": "https://developers.openai.com/codex/cloud/environments/",
+    "status": 403
+  },
+  "direct_file_navigation": "ERR_BLOCKED_BY_ADMINISTRATOR",
+  "browser_policy_modified": false,
+  "html_content_test": "Playwright in-memory response, offline context; not a user-accessible URL",
+  "private_artifact_panel_request": "queued; user reports workspace link does not open/appear",
+  "native_html_or_zip_attachment_tool_available": false
+}

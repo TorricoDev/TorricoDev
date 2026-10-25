@@ -1,0 +1,23 @@
+$ npm run build:review
+
+> reliquias-da-ruina@0.1.0 build:review
+> node tools/check-source.mjs && node tools/validate-assets.mjs && node tools/build-review.mjs
+
+34 arquivos JavaScript verificados sintaticamente.
+OK traveler.json/idle: 96×240, 10 quadros
+OK traveler.json/move: 192×240, 20 quadros
+30 quadros validados: RGBA, dimensões, margens, alpha e alinhamento.
+vite v7.3.7 building client environment for review...
+transforming...
+✓ 20 modules transformed.
+rendering chunks...
+✓ built in 8.34s
+Revisão local: dist-review/reliquias-da-ruina.html (1246660 bytes)
+SHA-256: 4810600a6973450e8c3fdfdd406b837b44de306e1369d9fb68340f70618b8861
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+
+Exit status: 0

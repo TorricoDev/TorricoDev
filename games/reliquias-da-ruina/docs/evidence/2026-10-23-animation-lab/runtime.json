@@ -1,0 +1,32 @@
+{
+  "recorded_at_utc": "2026-10-24T00:34:52.236192+00:00",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "cwd": "/workspace/TorricoDev/games/reliquias-da-ruina",
+  "lockfile_sha256": "62979c25194a2923a6de802f73611843baacb0325fd7f9e874fd1a7d1d02d71c",
+  "source_base": "832fec06b48248e0fdea5044859d596bd945653e",
+  "branch": "codex/roguelite-bootstrap-2026-10-23",
+  "node": "v24.19.0",
+  "npm": "11.9.0",
+  "chromium": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)",
+  "dependencies": {
+    "version": "0.1.0",
+    "name": "reliquias-da-ruina",
+    "dependencies": {
+      "@playwright/test": {
+        "version": "1.64.1",
+        "resolved": "https://registry.npmjs.org/@playwright/test/-/test-1.64.1.tgz",
+        "overridden": false
+      },
+      "phaser": {
+        "version": "3.90.0",
+        "resolved": "https://registry.npmjs.org/phaser/-/phaser-3.90.0.tgz",
+        "overridden": false
+      },
+      "vite": {
+        "version": "7.3.7",
+        "resolved": "https://registry.npmjs.org/vite/-/vite-7.3.7.tgz",
+        "overridden": false
+      }
+    }
+  }
+}

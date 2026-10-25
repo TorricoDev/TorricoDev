@@ -1,0 +1,9 @@
+{
+  "format": "html-with-inline-iife-css-and-png",
+  "bytes": 1246660,
+  "sha256": "4810600a6973450e8c3fdfdd406b837b44de306e1369d9fb68340f70618b8861",
+  "assets": {
+    "assets/actors/traveler/idle.png": "0e6432eb2d2bcd81b9c2bc1fc21ae700d51da90fa516e2fd990b62964233ce01",
+    "assets/actors/traveler/move.png": "6a5fb769fc83e5b1d93a4dc732ba5938e14298bf40226b13c8c1aee5d434903d"
+  }
+}

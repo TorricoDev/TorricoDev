@@ -1,0 +1,842 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/TorricoDev/games/reliquias-da-ruina/node_modules/.bin/playwright",
+      "test",
+      "--reporter=line,json"
+    ],
+    "configFile": "/workspace/TorricoDev/games/reliquias-da-ruina/playwright.config.js",
+    "rootDir": "/workspace/TorricoDev/games/reliquias-da-ruina/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/TorricoDev/games/reliquias-da-ruina/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/TorricoDev/games/reliquias-da-ruina/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/TorricoDev/games/reliquias-da-ruina/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/TorricoDev/games/reliquias-da-ruina/tests/browser",
+        "snapshotDir": "/workspace/TorricoDev/games/reliquias-da-ruina/tests/browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 1100,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium"
+          },
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "animation-lab.spec.js",
+      "file": "animation-lab.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "catalog loads the shared actor, metadata and eight real directional animations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1600,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T00:35:53.147Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "lab-overview-3x.png",
+                      "contentType": "image/png",
+                      "path": "lab-overview-3x.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd37cf73dbeb95b4257-d6f256712d80af7908e7",
+          "file": "animation-lab.spec.js",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "pause, resume, bidirectional stepping and timeline select actual sheet frames",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2031,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T00:35:55.141Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "lab-move-frame-3.png",
+                      "contentType": "image/png",
+                      "path": "lab-move-frame-3.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd37cf73dbeb95b4257-2514ccfeffb9dd7010a2",
+          "file": "animation-lab.spec.js",
+          "line": 52,
+          "column": 1
+        },
+        {
+          "title": "playback speed changes observed frames without changing the original FPS",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 984,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T00:35:57.225Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd37cf73dbeb95b4257-268c114b465de5286e84",
+          "file": "animation-lab.spec.js",
+          "line": 87,
+          "column": 1
+        },
+        {
+          "title": "grid, pivot, baseline, hitbox and three backgrounds change rendered pixels",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2958,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T00:35:58.227Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "lab-guides-dark.png",
+                      "contentType": "image/png",
+                      "path": "lab-guides-dark.png"
+                    },
+                    {
+                      "name": "lab-guides-light.png",
+                      "contentType": "image/png",
+                      "path": "lab-guides-light.png"
+                    },
+                    {
+                      "name": "lab-guides-checker.png",
+                      "contentType": "image/png",
+                      "path": "lab-guides-checker.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd37cf73dbeb95b4257-3c62a2fd307cc04f2559",
+          "file": "animation-lab.spec.js",
+          "line": 106,
+          "column": 1
+        },
+        {
+          "title": "all zoom values 1\u00d7\u20138\u00d7 preserve logical resolution and allow scrolling",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 986,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T00:36:01.202Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd37cf73dbeb95b4257-138fef7f479565383c01",
+          "file": "animation-lab.spec.js",
+          "line": 132,
+          "column": 1
+        },
+        {
+          "title": "navigation returns to a playable room and reopens an independent laboratory",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1657,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T00:36:02.201Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd37cf73dbeb95b4257-601347a79a6e388d1b08",
+          "file": "animation-lab.spec.js",
+          "line": 150,
+          "column": 1
+        }
+      ],
+      "suites": [
+        {
+          "title": "small screen and DPR 2",
+          "file": "animation-lab.spec.js",
+          "line": 166,
+          "column": 6,
+          "specs": [
+            {
+              "title": "1\u00d7 retains eight directions and sharp pixels",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 811,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-24T00:36:03.872Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "lab-1x-dpr-2.png",
+                          "contentType": "image/png",
+                          "path": "lab-1x-dpr-2.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8dd37cf73dbeb95b4257-98e5079aa7e2ee68259e",
+              "file": "animation-lab.spec.js",
+              "line": 168,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "room.spec.js",
+      "file": "room.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "boots without runtime errors and preserves a 320\u00d7180 canvas with integer zoom",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 737,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T00:36:04.706Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "room-3x.png",
+                      "contentType": "image/png",
+                      "path": "room-3x.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8c520e175aeda21322f3-523c8ee78992758919f6",
+          "file": "room.spec.js",
+          "line": 51,
+          "column": 1
+        },
+        {
+          "title": "walks in eight directions at normalized speed, then retains facing while idle",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3625,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Eight-direction displacement: [{\"facing\":\"N\",\"dx\":0,\"dy\":-33.599999999999994,\"distance\":33.599999999999994},{\"facing\":\"NE\",\"dx\":23.758999999999986,\"dy\":-23.759,\"distance\":33.60030002842236},{\"facing\":\"E\",\"dx\":33.599999999999994,\"dy\":0,\"distance\":33.599999999999994},{\"facing\":\"SE\",\"dx\":23.758999999999986,\"dy\":23.758999999999986,\"distance\":33.600300028422346},{\"facing\":\"S\",\"dx\":0,\"dy\":33.599999999999994,\"distance\":33.599999999999994},{\"facing\":\"SW\",\"dx\":-22.909999999999997,\"dy\":22.909999999999997,\"distance\":32.399632713967605},{\"facing\":\"W\",\"dx\":-33.599999999999994,\"dy\":0,\"distance\":33.599999999999994},{\"facing\":\"NW\",\"dx\":-22.909999999999997,\"dy\":-22.909999999999997,\"distance\":32.399632713967605}]\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T00:36:05.455Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "displacement.json",
+                      "contentType": "application/json",
+                      "path": "displacement.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8c520e175aeda21322f3-2ca5c9e651ac898bb5f2",
+          "file": "room.spec.js",
+          "line": 58,
+          "column": 1
+        },
+        {
+          "title": "collides with world bounds and altar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2885,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T00:36:09.097Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8c520e175aeda21322f3-fec9fde52efc39a12e85",
+          "file": "room.spec.js",
+          "line": 88,
+          "column": 1
+        },
+        {
+          "title": "pause freezes physics, reset returns to spawn, focus loss releases keys",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1279,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T00:36:12.013Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8c520e175aeda21322f3-7bae296e19b7b12685e1",
+          "file": "room.spec.js",
+          "line": 96,
+          "column": 1
+        },
+        {
+          "title": "arrow keys move and opposing keys cancel",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1207,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T00:36:13.308Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8c520e175aeda21322f3-abc6c1752d3887f5e143",
+          "file": "room.spec.js",
+          "line": 115,
+          "column": 1
+        },
+        {
+          "title": "all four walls stop the foot collider",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5470,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T00:36:14.528Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8c520e175aeda21322f3-6e41fd5baa8f3b199c6e",
+          "file": "room.spec.js",
+          "line": 125,
+          "column": 1
+        },
+        {
+          "title": "all five obstacles block the player on approach",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12060,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T00:36:20.014Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8c520e175aeda21322f3-8fe93c93d580602e063c",
+          "file": "room.spec.js",
+          "line": 138,
+          "column": 1
+        },
+        {
+          "title": "idle and held movement advance visible frames; pause freezes playback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2880,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T00:36:32.086Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "idle-frame.png",
+                      "contentType": "image/png",
+                      "path": "idle-frame.png"
+                    },
+                    {
+                      "name": "move-frame.png",
+                      "contentType": "image/png",
+                      "path": "move-frame.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8c520e175aeda21322f3-59e88db5bbb078ae5b30",
+          "file": "room.spec.js",
+          "line": 159,
+          "column": 1
+        },
+        {
+          "title": "buttons, Escape, paused reset and collision overlay work",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1471,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T00:36:34.982Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "foot-collider.png",
+                      "contentType": "image/png",
+                      "path": "foot-collider.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8c520e175aeda21322f3-90b8dc1ed41e97f80731",
+          "file": "room.spec.js",
+          "line": 182,
+          "column": 1
+        }
+      ],
+      "suites": [
+        {
+          "title": "DPR 1",
+          "file": "room.spec.js",
+          "line": 211,
+          "column": 8,
+          "specs": [
+            {
+              "title": "resizes at integer 1\u00d7/2\u00d7/3\u00d7 without smoothing or shrinking",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 862,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-24T00:36:36.462Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "room-1x-dpr-1.png",
+                          "contentType": "image/png",
+                          "path": "room-1x-dpr-1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c520e175aeda21322f3-8d8d7d5f2ae5cef360ad",
+              "file": "room.spec.js",
+              "line": 213,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "DPR 2",
+          "file": "room.spec.js",
+          "line": 211,
+          "column": 8,
+          "specs": [
+            {
+              "title": "resizes at integer 1\u00d7/2\u00d7/3\u00d7 without smoothing or shrinking",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 925,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-24T00:36:37.341Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "room-1x-dpr-2.png",
+                          "contentType": "image/png",
+                          "path": "room-1x-dpr-2.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c520e175aeda21322f3-15c2b307f9437b8ebfe5",
+              "file": "room.spec.js",
+              "line": 213,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-24T00:35:52.362Z",
+    "duration": 46009.49600000001,
+    "expected": 18,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

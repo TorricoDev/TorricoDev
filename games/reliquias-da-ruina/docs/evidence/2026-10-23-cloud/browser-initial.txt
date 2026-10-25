@@ -1,0 +1,63 @@
+
+> reliquias-da-ruina@0.1.0 test:browser
+> playwright test --reporter=line
+
+
+Running 4 tests using 1 worker
+
+(node:3117) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/4] tests/browser/room.spec.js:17:1 › boots without runtime errors and preserves a 320×180 canvas with integer zoom
+[2/4] tests/browser/room.spec.js:28:1 › walks in eight directions, then retains facing while idle
+  1) tests/browser/room.spec.js:28:1 › walks in eight directions, then retains facing while idle ───
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  locator('#player-facing')
+    Expected: "NE"
+    Received: "E"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveText" locator('#player-facing') with timeout 5000ms
+      - waiting for locator('#player-facing')
+        14 × locator resolved to <strong id="player-facing">E</strong>
+           - unexpected value "E"
+
+
+      31 |     await page.keyboard.press('r', { delay: 60 });
+      32 |     await move(page, keys, 120);
+    > 33 |     await expect(page.locator('#player-facing')).toHaveText(facing);
+         |                                                  ^
+      34 |     await expect(page.locator('#player-state')).toHaveText('IDLE');
+      35 |   }
+      36 | });
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:33:50
+
+    Error Context: test-results/room-walks-in-eight-direct-d2910-n-retains-facing-while-idle/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/room-walks-in-eight-direct-d2910-n-retains-facing-while-idle/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/room-walks-in-eight-direct-d2910-n-retains-facing-while-idle/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:3300) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/4] tests/browser/room.spec.js:38:1 › collides with world bounds and altar
+[4/4] tests/browser/room.spec.js:46:1 › pause freezes physics, reset returns to spawn, focus loss releases keys
+  1 failed
+    tests/browser/room.spec.js:28:1 › walks in eight directions, then retains facing while idle ────
+  3 passed (19.8s)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

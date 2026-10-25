@@ -1,0 +1,12 @@
+{
+  "recorded_at_utc": "2026-10-25T16:06:00.177076+00:00",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "cwd": "/workspace/TorricoDev/games/reliquias-da-ruina",
+  "artifact": "/workspace/artifacts/reliquias-da-ruina-2026-10-25-4810600a/reliquias-da-ruina.html",
+  "lockfile_sha256": "62979c25194a2923a6de802f73611843baacb0325fd7f9e874fd1a7d1d02d71c",
+  "branch": "codex/roguelite-bootstrap-2026-10-23",
+  "source_base": "8fdf0f0e950fa32ecf543e595d69d00c459f1631",
+  "node": "v24.19.0",
+  "npm": "11.9.0",
+  "chromium": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)"
+}
