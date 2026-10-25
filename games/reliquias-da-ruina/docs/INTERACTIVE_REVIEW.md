@@ -4,9 +4,19 @@
 
 Não foi disponibilizada uma URL de prévia privada/encaminhamento de portas pelas ferramentas do Codex desta tarefa. A resposta mais recente do usuário também informa que esse recurso não aparece na interface. O navegador remoto do Playwright e o servidor de loopback são recursos internos de teste; eles não fornecem um endereço acessível no computador do usuário.
 
-A alternativa preparada é **um arquivo HTML autossuficiente**, com Phaser, código do jogo, CSS e os PNGs originais incorporados. Não precisa de servidor, npm, extensão, instalação de software ou conexão de rede para executar seu conteúdo. O arquivo é gerado no Cloud e fica fora do Git público. A transferência para o computador do usuário depende da possibilidade de salvar/exportar o arquivo pelo cliente Codex; esse fluxo não pode ser presumido a partir de um link de workspace.
+A alternativa preparada é **um arquivo HTML autossuficiente**, com Phaser, código do jogo, CSS e os PNGs originais incorporados. Não precisa de servidor, npm, extensão, instalação de software ou conexão de rede para executar seu conteúdo. O arquivo é gerado no Cloud e fica fora do Git público. O usuário confirmou que os links de workspace desta conversa não abrem/aparecem em seu cliente. As ferramentas atuais não têm operação para anexar HTML/ZIP diretamente. Portanto, o arquivo está pronto no executor, mas sua entrega privada ao computador ainda não está resolvida; não apresentar outro caminho de workspace como download garantido.
 
-## Abrir o arquivo no computador
+## Captura recebida e download do visualizador
+
+A captura do usuário mostra uma visualização intitulada “Index”, sem estilos, parada em CARREGANDO e com aviso de erro. Ela contém um ícone de download no canto superior direito. Não é possível concluir apenas pela captura qual arquivo será exportado ou se o visualizador bloqueou seus recursos.
+
+- O pacote HTML completo desta entrega tem **1.246.660 bytes** (cerca de 1,25 MB), um bloco de CSS e sprites incorporados.
+- O `index.html` fonte do projeto tem cerca de **6 KB**, não contém CSS incorporado e importa `/src/main.js`; precisa do Vite. Baixar esse index isolado não entrega o jogo executável.
+- Se o botão exportar o HTML completo, abrir a cópia no navegador conforme abaixo. Se exportar apenas o index pequeno ou não salvar nada, será necessário um recurso oficial de exportação ou outro canal privado autorizado. Não foi habilitado esse canal por esta integração.
+
+Foi preparado também um ZIP privado de **344.999 bytes**, contendo o mesmo HTML, instruções e checksum. A integridade do ZIP e o hash do HTML foram verificados. Sua existência no workspace não constitui um download disponível ao usuário. [Registro do acompanhamento](evidence/2026-10-25-interactive-review/delivery-followup.json).
+
+## Abrir o arquivo no computador, após recebê-lo
 
 1. Salvar uma cópia do **HTML de revisão fornecido na conversa** como `reliquias-da-ruina.html`. Não salvar apenas o link, uma captura ou a página da conversa.
 2. Abrir o arquivo salvo com um navegador moderno, preferencialmente Chrome ou Edge. Pode usar **Ctrl+O** no navegador e selecionar o HTML; no macOS, **Cmd+O**.

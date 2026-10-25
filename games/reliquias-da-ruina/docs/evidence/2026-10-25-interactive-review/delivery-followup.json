@@ -1,0 +1,10 @@
+{
+  "path": "/workspace/artifacts/reliquias-da-ruina-2026-10-25-4810600a/reliquias-da-ruina-revisao.zip",
+  "bytes": 344999,
+  "sha256": "bc6f95e31f03764508e1063e67c7710b236432c47f7fafb23a65f9698412fce8",
+  "html_sha256": "4810600a6973450e8c3fdfdd406b837b44de306e1369d9fb68340f70618b8861",
+  "zip_integrity": "passed",
+  "delivery_to_user": "blocked: workspace links do not open/appear in the client, per user report",
+  "screenshot_observation": "Index preview unstyled; CARREGANDO; visualization error; a download icon is visible; exact downloaded file unknown",
+  "native_file_upload_tool_available": false
+}

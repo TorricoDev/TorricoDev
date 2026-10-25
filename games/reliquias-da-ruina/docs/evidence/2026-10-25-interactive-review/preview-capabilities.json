@@ -13,5 +13,6 @@
   "direct_file_navigation": "ERR_BLOCKED_BY_ADMINISTRATOR",
   "browser_policy_modified": false,
   "html_content_test": "Playwright in-memory response, offline context; not a user-accessible URL",
-  "private_artifact_panel_request": "queued; no confirmed download or browser execution on user computer"
+  "private_artifact_panel_request": "queued; user reports workspace link does not open/appear",
+  "native_html_or_zip_attachment_tool_available": false
 }

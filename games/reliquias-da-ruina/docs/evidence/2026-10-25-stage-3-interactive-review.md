@@ -73,3 +73,11 @@ Não houve pessoa jogando, avaliação contínua de fluidez, teste de download n
 As alterações de código/testes/documentação pertencem à mesma branch e ao [PR #1](https://github.com/TorricoDev/TorricoDev/pull/1), que deve permanecer em rascunho, sem merge automático. O HTML gerado permanece privado, fora do Git. Nenhum túnel, hospedagem pública, serviço pago ou infraestrutura externa foi criado.
 
 **Recomendação:** concluir a transferência/abertura e a revisão humana com o roteiro antes de iniciar combate. A preparação técnica está testada, mas não supre o objetivo humano enquanto esse acesso não estiver confirmado.
+
+## Acompanhamento após a entrega
+
+O usuário enviou captura da visualização “Index”, sem CSS visível/canvas, parada em CARREGANDO e com aviso de erro, e confirmou: “O link não abre ou não aparece”. O link do workspace não resolveu a transferência. Nenhuma operação nativa de upload/anexo HTML ou ZIP foi encontrada nas ferramentas desta sessão; `attach_artifact` aceita somente pull requests. A abertura no Codex foi enfileirada, sem confirmação de exibição ao usuário.
+
+A captura tem botão de download no canto superior direito; o arquivo que esse botão entrega ainda não foi identificado. Não afirmar que seja o HTML completo ou que um ZIP adicional resolva a limitação de transporte. A comparação local verificou o index fonte de 5.809 bytes, sem CSS incorporado, e o HTML completo de 1.246.660 bytes com CSS/PNGs incorporados. A captura isolada não prova qual deles foi usado ou se houve bloqueio do visualizador.
+
+Um ZIP privado de 344.999 bytes foi preparado para eventual canal autorizado. O CRC do arquivo e o SHA-256 do HTML extraído passaram. O HTML é o mesmo já testado; não houve alteração de gameplay nem nova rodada desnecessária de testes. [Metadados](2026-10-25-interactive-review/delivery-followup.json). O objetivo de acesso humano continua aberto, e o PR deve permanecer em rascunho.
