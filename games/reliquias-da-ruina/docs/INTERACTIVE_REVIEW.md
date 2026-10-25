@@ -8,11 +8,11 @@ A alternativa preparada é **um arquivo HTML autossuficiente**, com Phaser, cód
 
 ## Captura recebida e download do visualizador
 
-A captura do usuário mostra uma visualização intitulada “Index”, sem estilos, parada em CARREGANDO e com aviso de erro. Ela contém um ícone de download no canto superior direito. Não é possível concluir apenas pela captura qual arquivo será exportado ou se o visualizador bloqueou seus recursos.
+A captura do usuário mostra uma visualização intitulada “Index”, sem estilos, parada em CARREGANDO e com aviso de erro. Ela contém um ícone de download no canto superior direito. Depois da captura, o usuário confirmou que o download gera um `index.html` de poucos KB. Isso é consistente com o arquivo fonte e não fornece o pacote completo.
 
 - O pacote HTML completo desta entrega tem **1.246.660 bytes** (cerca de 1,25 MB), um bloco de CSS e sprites incorporados.
 - O `index.html` fonte do projeto tem cerca de **6 KB**, não contém CSS incorporado e importa `/src/main.js`; precisa do Vite. Baixar esse index isolado não entrega o jogo executável.
-- Se o botão exportar o HTML completo, abrir a cópia no navegador conforme abaixo. Se exportar apenas o index pequeno ou não salvar nada, será necessário um recurso oficial de exportação ou outro canal privado autorizado. Não foi habilitado esse canal por esta integração.
+- O botão do visualizador exporta apenas o index pequeno nesta interface, conforme confirmação do usuário. Não usar esse arquivo isolado como jogo. Será necessário um recurso oficial que exporte o HTML completo ou outro canal privado autorizado com capacidade de upload. Não foi habilitado esse canal por esta integração, e não se deve prometer que conectar um serviço permitirá upload antes de verificar suas ferramentas.
 
 Foi preparado também um ZIP privado de **344.999 bytes**, contendo o mesmo HTML, instruções e checksum. A integridade do ZIP e o hash do HTML foram verificados. Sua existência no workspace não constitui um download disponível ao usuário. [Registro do acompanhamento](evidence/2026-10-25-interactive-review/delivery-followup.json).
 

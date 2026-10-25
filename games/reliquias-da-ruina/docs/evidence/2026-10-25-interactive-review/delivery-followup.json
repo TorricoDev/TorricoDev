@@ -6,5 +6,7 @@
   "zip_integrity": "passed",
   "delivery_to_user": "blocked: workspace links do not open/appear in the client, per user report",
   "screenshot_observation": "Index preview unstyled; CARREGANDO; visualization error; a download icon is visible; exact downloaded file unknown",
-  "native_file_upload_tool_available": false
+  "native_file_upload_tool_available": false,
+  "viewer_download_user_confirmation": "index.html of a few KB; complete HTML not received",
+  "human_access": "blocked by transfer of the complete artifact"
 }
