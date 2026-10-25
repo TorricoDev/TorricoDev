@@ -1,0 +1,710 @@
+
+> reliquias-da-ruina@0.1.0 test:browser
+> playwright test --reporter=line,json
+
+✔ frame stepping wraps in both directions, including single-frame clips (0.744809ms)
+✔ frame stepping rejects invalid indices and frame counts (0.252489ms)
+✔ manual zoom permits exactly the eight integer scales (0.200411ms)
+✔ all eight cells fit the 320×180 gallery and preserve source anchors/collider geometry (1.181375ms)
+✔ missing body profile remains explicit and invalid gallery indices fail (0.204567ms)
+✔ five original rows provide all eight directions using safe horizontal mirrors (1.598201ms)
+✔ animation speed, repeat and frame range come from action data (0.402395ms)
+✔ eight original directions work without mirroring asymmetric art (0.345399ms)
+✔ manifest rejects unsafe mirroring (0.44598ms)
+✔ manifest rejects mirror chains (0.290336ms)
+✔ manifest rejects missing directions (0.268263ms)
+✔ manifest rejects duplicate directions (0.147472ms)
+✔ manifest rejects off-center mirror anchor (0.118137ms)
+✔ manifest rejects wrong cell category (0.117597ms)
+✔ manifest rejects invalid FPS (0.256165ms)
+✔ manifest rejects invalid frame count (0.192619ms)
+✔ manifest rejects path traversal (0.153491ms)
+✔ manifest rejects opaque body alpha policy (0.104367ms)
+✔ manifest rejects wrong vertical pivot (0.165659ms)
+✔ unknown states and orientations fail clearly (0.33278ms)
+✔ tracked sheets match dimensions, alpha, margins and baseline (103.3326ms)
+✔ PNG encoder and decoder preserve exact RGBA, including transparent pixels (0.924098ms)
+✔ PNG parser rejects corrupt, truncated and non-PNG inputs (0.457207ms)
+✔ sheet validation rejects dimensions, alpha blending, cropping, empty frames and foot drift (0.97469ms)
+✔ decoder supports PNG row filters Sub, Up, Average and Paeth used by art exporters (1.130888ms)
+✔ all eight directions preserve the same speed (0.354352ms)
+✔ idle retains facing, with south as the initial direction (0.183556ms)
+✔ opposite keys cancel without NaN (0.165639ms)
+✔ near-horizontal vectors are visually quantized without changing the movement vector (0.085278ms)
+✔ viewport scaling always uses whole pixels, including undersized viewports (0.222264ms)
+✔ room spawn and every static obstacle fit inside room bounds (0.233812ms)
+✔ review HTML embeds script, CSS, licenses and an offline resource policy (1.16493ms)
+✔ review packaging fails if its explicit entry or head is missing/duplicated (0.333171ms)
+✔ additional external script/style references cannot be silently omitted (0.203706ms)
+✔ embedded closing tags cannot terminate script/style or a license comment (1.520083ms)
+
+Running 21 tests using 1 worker
+
+(node:38853) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/21] tests/browser/animation-lab.spec.js:31:1 › catalog loads the shared actor, metadata and eight real directional animations
+  1) tests/browser/animation-lab.spec.js:31:1 › catalog loads the shared actor, metadata and eight real directional animations
+
+    Error: page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html?view=animations
+    Call log:
+      - navigating to "file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html?view=animations", waiting until "load"
+
+
+      23 |   page.on('console', message => { if (message.type() === 'error') errors.push(`${message.text()} (${message.location().url})`); });
+      24 |   await page.clock.install();
+    > 25 |   await page.goto(entryURL('?view=animations'));
+         |              ^
+      26 |   await expect(page.locator('#lab-status')).toHaveText('REPRODUZINDO');
+      27 |   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 500));
+      28 | });
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/animation-lab.spec.js:25:14
+
+    Error Context: test-results/browser-animation-lab-cata-88b48-real-directional-animations/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser-animation-lab-cata-88b48-real-directional-animations/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser-animation-lab-cata-88b48-real-directional-animations/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:39150) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/21] tests/browser/animation-lab.spec.js:53:1 › pause, resume, bidirectional stepping and timeline select actual sheet frames
+  2) tests/browser/animation-lab.spec.js:53:1 › pause, resume, bidirectional stepping and timeline select actual sheet frames
+
+    Error: page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html?view=animations
+    Call log:
+      - navigating to "file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html?view=animations", waiting until "load"
+
+
+      23 |   page.on('console', message => { if (message.type() === 'error') errors.push(`${message.text()} (${message.location().url})`); });
+      24 |   await page.clock.install();
+    > 25 |   await page.goto(entryURL('?view=animations'));
+         |              ^
+      26 |   await expect(page.locator('#lab-status')).toHaveText('REPRODUZINDO');
+      27 |   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 500));
+      28 | });
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/animation-lab.spec.js:25:14
+
+    Error Context: test-results/browser-animation-lab-paus-401f9--select-actual-sheet-frames/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser-animation-lab-paus-401f9--select-actual-sheet-frames/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser-animation-lab-paus-401f9--select-actual-sheet-frames/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:39469) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/21] tests/browser/animation-lab.spec.js:88:1 › playback speed changes observed frames without changing the original FPS
+  3) tests/browser/animation-lab.spec.js:88:1 › playback speed changes observed frames without changing the original FPS
+
+    Error: page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html?view=animations
+    Call log:
+      - navigating to "file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html?view=animations", waiting until "load"
+
+
+      23 |   page.on('console', message => { if (message.type() === 'error') errors.push(`${message.text()} (${message.location().url})`); });
+      24 |   await page.clock.install();
+    > 25 |   await page.goto(entryURL('?view=animations'));
+         |              ^
+      26 |   await expect(page.locator('#lab-status')).toHaveText('REPRODUZINDO');
+      27 |   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 500));
+      28 | });
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/animation-lab.spec.js:25:14
+
+    Error Context: test-results/browser-animation-lab-play-2bff9-t-changing-the-original-FPS/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser-animation-lab-play-2bff9-t-changing-the-original-FPS/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser-animation-lab-play-2bff9-t-changing-the-original-FPS/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:39701) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/21] tests/browser/animation-lab.spec.js:107:1 › grid, pivot, baseline, hitbox and three backgrounds change rendered pixels
+  4) tests/browser/animation-lab.spec.js:107:1 › grid, pivot, baseline, hitbox and three backgrounds change rendered pixels
+
+    Error: page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html?view=animations
+    Call log:
+      - navigating to "file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html?view=animations", waiting until "load"
+
+
+      23 |   page.on('console', message => { if (message.type() === 'error') errors.push(`${message.text()} (${message.location().url})`); });
+      24 |   await page.clock.install();
+    > 25 |   await page.goto(entryURL('?view=animations'));
+         |              ^
+      26 |   await expect(page.locator('#lab-status')).toHaveText('REPRODUZINDO');
+      27 |   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 500));
+      28 | });
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/animation-lab.spec.js:25:14
+
+    Error Context: test-results/browser-animation-lab-grid-71bc3-unds-change-rendered-pixels/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser-animation-lab-grid-71bc3-unds-change-rendered-pixels/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser-animation-lab-grid-71bc3-unds-change-rendered-pixels/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:39836) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[5/21] tests/browser/animation-lab.spec.js:133:1 › all zoom values 1×–8× preserve logical resolution and allow scrolling
+  5) tests/browser/animation-lab.spec.js:133:1 › all zoom values 1×–8× preserve logical resolution and allow scrolling
+
+    Error: page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html?view=animations
+    Call log:
+      - navigating to "file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html?view=animations", waiting until "load"
+
+
+      23 |   page.on('console', message => { if (message.type() === 'error') errors.push(`${message.text()} (${message.location().url})`); });
+      24 |   await page.clock.install();
+    > 25 |   await page.goto(entryURL('?view=animations'));
+         |              ^
+      26 |   await expect(page.locator('#lab-status')).toHaveText('REPRODUZINDO');
+      27 |   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 500));
+      28 | });
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/animation-lab.spec.js:25:14
+
+    Error Context: test-results/browser-animation-lab-all--41cf0-olution-and-allow-scrolling/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser-animation-lab-all--41cf0-olution-and-allow-scrolling/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser-animation-lab-all--41cf0-olution-and-allow-scrolling/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:39970) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[6/21] tests/browser/animation-lab.spec.js:151:1 › navigation returns to a playable room and reopens an independent laboratory
+  6) tests/browser/animation-lab.spec.js:151:1 › navigation returns to a playable room and reopens an independent laboratory
+
+    Error: page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html?view=animations
+    Call log:
+      - navigating to "file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html?view=animations", waiting until "load"
+
+
+      23 |   page.on('console', message => { if (message.type() === 'error') errors.push(`${message.text()} (${message.location().url})`); });
+      24 |   await page.clock.install();
+    > 25 |   await page.goto(entryURL('?view=animations'));
+         |              ^
+      26 |   await expect(page.locator('#lab-status')).toHaveText('REPRODUZINDO');
+      27 |   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 500));
+      28 | });
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/animation-lab.spec.js:25:14
+
+    Error Context: test-results/browser-animation-lab-navi-6fd95-s-an-independent-laboratory/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser-animation-lab-navi-6fd95-s-an-independent-laboratory/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser-animation-lab-navi-6fd95-s-an-independent-laboratory/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:40104) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[7/21] tests/browser/animation-lab.spec.js:169:3 › small screen and DPR 2 › 1× retains eight directions and sharp pixels
+  7) tests/browser/animation-lab.spec.js:169:3 › small screen and DPR 2 › 1× retains eight directions and sharp pixels
+
+    Error: page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html?view=animations
+    Call log:
+      - navigating to "file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html?view=animations", waiting until "load"
+
+
+      23 |   page.on('console', message => { if (message.type() === 'error') errors.push(`${message.text()} (${message.location().url})`); });
+      24 |   await page.clock.install();
+    > 25 |   await page.goto(entryURL('?view=animations'));
+         |              ^
+      26 |   await expect(page.locator('#lab-status')).toHaveText('REPRODUZINDO');
+      27 |   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 500));
+      28 | });
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/animation-lab.spec.js:25:14
+
+    Error Context: test-results/browser-animation-lab-smal-e9f72-directions-and-sharp-pixels/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser-animation-lab-smal-e9f72-directions-and-sharp-pixels/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser-animation-lab-smal-e9f72-directions-and-sharp-pixels/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:40243) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[8/21] tests/browser/loading.spec.js:4:1 › scripts, styles and sheets load with no resource or console errors
+  8) tests/browser/loading.spec.js:4:1 › scripts, styles and sheets load with no resource or console errors
+
+    Error: page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html
+    Call log:
+      - navigating to "file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html", waiting until "load"
+
+
+       8 |   page.on('pageerror', error => errors.push(error.message));
+       9 |   page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
+    > 10 |   await page.goto(entryURL());
+         |              ^
+      11 |   await expect(page.locator('#game-status')).toHaveText('SALA ATIVA');
+      12 |   expect(errors).toEqual([]);
+      13 |   expect(responses.filter(response => response.status >= 400)).toEqual([]);
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/loading.spec.js:10:14
+
+    Error Context: test-results/browser-loading-scripts-st-99dc8--resource-or-console-errors/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser-loading-scripts-st-99dc8--resource-or-console-errors/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser-loading-scripts-st-99dc8--resource-or-console-errors/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:40380) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[9/21] tests/browser/room.spec.js:52:1 › boots without runtime errors and preserves a 320×180 canvas with integer zoom
+  9) tests/browser/room.spec.js:52:1 › boots without runtime errors and preserves a 320×180 canvas with integer zoom
+
+    Error: page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html
+    Call log:
+      - navigating to "file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html", waiting until "load"
+
+
+      41 |   });
+      42 |   await page.clock.install();
+    > 43 |   await page.goto(entryURL());
+         |              ^
+      44 |   await expect(page.locator('#game-status')).toHaveText('SALA ATIVA');
+      45 |   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 500));
+      46 | });
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:43:14
+
+    Error Context: test-results/browser-room-boots-without-c276e-80-canvas-with-integer-zoom/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser-room-boots-without-c276e-80-canvas-with-integer-zoom/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser-room-boots-without-c276e-80-canvas-with-integer-zoom/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:40518) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[10/21] tests/browser/room.spec.js:59:1 › walks in eight directions at normalized speed, then retains facing while idle
+  10) tests/browser/room.spec.js:59:1 › walks in eight directions at normalized speed, then retains facing while idle
+
+    Error: page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html
+    Call log:
+      - navigating to "file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html", waiting until "load"
+
+
+      41 |   });
+      42 |   await page.clock.install();
+    > 43 |   await page.goto(entryURL());
+         |              ^
+      44 |   await expect(page.locator('#game-status')).toHaveText('SALA ATIVA');
+      45 |   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 500));
+      46 | });
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:43:14
+
+    Error Context: test-results/browser-room-walks-in-eigh-bd04b-n-retains-facing-while-idle/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser-room-walks-in-eigh-bd04b-n-retains-facing-while-idle/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser-room-walks-in-eigh-bd04b-n-retains-facing-while-idle/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:40652) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[11/21] tests/browser/room.spec.js:89:1 › collides with world bounds and altar
+  11) tests/browser/room.spec.js:89:1 › collides with world bounds and altar ───────────────────────
+
+    Error: page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html
+    Call log:
+      - navigating to "file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html", waiting until "load"
+
+
+      41 |   });
+      42 |   await page.clock.install();
+    > 43 |   await page.goto(entryURL());
+         |              ^
+      44 |   await expect(page.locator('#game-status')).toHaveText('SALA ATIVA');
+      45 |   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 500));
+      46 | });
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:43:14
+
+    Error Context: test-results/browser-room-collides-with-world-bounds-and-altar/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser-room-collides-with-world-bounds-and-altar/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser-room-collides-with-world-bounds-and-altar/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:40789) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[12/21] tests/browser/room.spec.js:97:1 › pause freezes physics, reset returns to spawn, focus loss releases keys
+  12) tests/browser/room.spec.js:97:1 › pause freezes physics, reset returns to spawn, focus loss releases keys
+
+    Error: page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html
+    Call log:
+      - navigating to "file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html", waiting until "load"
+
+
+      41 |   });
+      42 |   await page.clock.install();
+    > 43 |   await page.goto(entryURL());
+         |              ^
+      44 |   await expect(page.locator('#game-status')).toHaveText('SALA ATIVA');
+      45 |   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 500));
+      46 | });
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:43:14
+
+    Error Context: test-results/browser-room-pause-freezes-c893f-wn-focus-loss-releases-keys/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser-room-pause-freezes-c893f-wn-focus-loss-releases-keys/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser-room-pause-freezes-c893f-wn-focus-loss-releases-keys/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:40929) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[13/21] tests/browser/room.spec.js:116:1 › arrow keys move and opposing keys cancel
+  13) tests/browser/room.spec.js:116:1 › arrow keys move and opposing keys cancel ──────────────────
+
+    Error: page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html
+    Call log:
+      - navigating to "file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html", waiting until "load"
+
+
+      41 |   });
+      42 |   await page.clock.install();
+    > 43 |   await page.goto(entryURL());
+         |              ^
+      44 |   await expect(page.locator('#game-status')).toHaveText('SALA ATIVA');
+      45 |   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 500));
+      46 | });
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:43:14
+
+    Error Context: test-results/browser-room-arrow-keys-move-and-opposing-keys-cancel/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser-room-arrow-keys-move-and-opposing-keys-cancel/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser-room-arrow-keys-move-and-opposing-keys-cancel/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:41064) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[14/21] tests/browser/room.spec.js:126:1 › all four walls stop the foot collider
+  14) tests/browser/room.spec.js:126:1 › all four walls stop the foot collider ─────────────────────
+
+    Error: page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html
+    Call log:
+      - navigating to "file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html", waiting until "load"
+
+
+      41 |   });
+      42 |   await page.clock.install();
+    > 43 |   await page.goto(entryURL());
+         |              ^
+      44 |   await expect(page.locator('#game-status')).toHaveText('SALA ATIVA');
+      45 |   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 500));
+      46 | });
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:43:14
+
+    Error Context: test-results/browser-room-all-four-walls-stop-the-foot-collider/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser-room-all-four-walls-stop-the-foot-collider/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser-room-all-four-walls-stop-the-foot-collider/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:41202) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[15/21] tests/browser/room.spec.js:139:1 › all five obstacles block the player on approach
+  15) tests/browser/room.spec.js:139:1 › all five obstacles block the player on approach ───────────
+
+    Error: page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html
+    Call log:
+      - navigating to "file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html", waiting until "load"
+
+
+      41 |   });
+      42 |   await page.clock.install();
+    > 43 |   await page.goto(entryURL());
+         |              ^
+      44 |   await expect(page.locator('#game-status')).toHaveText('SALA ATIVA');
+      45 |   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 500));
+      46 | });
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:43:14
+
+    Error Context: test-results/browser-room-all-five-obstacles-block-the-player-on-approach/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser-room-all-five-obstacles-block-the-player-on-approach/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser-room-all-five-obstacles-block-the-player-on-approach/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:41336) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[16/21] tests/browser/room.spec.js:160:1 › idle and held movement advance visible frames; pause freezes playback
+  16) tests/browser/room.spec.js:160:1 › idle and held movement advance visible frames; pause freezes playback
+
+    Error: page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html
+    Call log:
+      - navigating to "file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html", waiting until "load"
+
+
+      41 |   });
+      42 |   await page.clock.install();
+    > 43 |   await page.goto(entryURL());
+         |              ^
+      44 |   await expect(page.locator('#game-status')).toHaveText('SALA ATIVA');
+      45 |   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 500));
+      46 | });
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:43:14
+
+    Error Context: test-results/browser-room-idle-and-held-f30b8-ames-pause-freezes-playback/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser-room-idle-and-held-f30b8-ames-pause-freezes-playback/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser-room-idle-and-held-f30b8-ames-pause-freezes-playback/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:41469) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[17/21] tests/browser/room.spec.js:183:1 › buttons, Escape, paused reset and collision overlay work
+  17) tests/browser/room.spec.js:183:1 › buttons, Escape, paused reset and collision overlay work ──
+
+    Error: page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html
+    Call log:
+      - navigating to "file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html", waiting until "load"
+
+
+      41 |   });
+      42 |   await page.clock.install();
+    > 43 |   await page.goto(entryURL());
+         |              ^
+      44 |   await expect(page.locator('#game-status')).toHaveText('SALA ATIVA');
+      45 |   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 500));
+      46 | });
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:43:14
+
+    Error Context: test-results/browser-room-buttons-Escap-c5109--and-collision-overlay-work/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser-room-buttons-Escap-c5109--and-collision-overlay-work/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser-room-buttons-Escap-c5109--and-collision-overlay-work/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:41606) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[18/21] tests/browser/room.spec.js:214:5 › DPR 1 › resizes at integer 1×/2×/3× without smoothing or shrinking
+  18) tests/browser/room.spec.js:214:5 › DPR 1 › resizes at integer 1×/2×/3× without smoothing or shrinking
+
+    Error: page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html
+    Call log:
+      - navigating to "file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html", waiting until "load"
+
+
+      41 |   });
+      42 |   await page.clock.install();
+    > 43 |   await page.goto(entryURL());
+         |              ^
+      44 |   await expect(page.locator('#game-status')).toHaveText('SALA ATIVA');
+      45 |   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 500));
+      46 | });
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:43:14
+
+    Error Context: test-results/browser-room-DPR-1-resizes-10cfd-hout-smoothing-or-shrinking/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser-room-DPR-1-resizes-10cfd-hout-smoothing-or-shrinking/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser-room-DPR-1-resizes-10cfd-hout-smoothing-or-shrinking/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:41744) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[19/21] tests/browser/room.spec.js:214:5 › DPR 2 › resizes at integer 1×/2×/3× without smoothing or shrinking
+  19) tests/browser/room.spec.js:214:5 › DPR 2 › resizes at integer 1×/2×/3× without smoothing or shrinking
+
+    Error: page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html
+    Call log:
+      - navigating to "file:///workspace/TorricoDev/games/reliquias-da-ruina/dist-review/reliquias-da-ruina.html", waiting until "load"
+
+
+      41 |   });
+      42 |   await page.clock.install();
+    > 43 |   await page.goto(entryURL());
+         |              ^
+      44 |   await expect(page.locator('#game-status')).toHaveText('SALA ATIVA');
+      45 |   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 500));
+      46 | });
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/browser/room.spec.js:43:14
+
+    Error Context: test-results/browser-room-DPR-2-resizes-e73f9-hout-smoothing-or-shrinking/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser-room-DPR-2-resizes-e73f9-hout-smoothing-or-shrinking/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser-room-DPR-2-resizes-e73f9-hout-smoothing-or-shrinking/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:41882) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[20/21] tests/review/portable.spec.js:7:1 › embedded PNGs preserve original bytes and the artifact matches its checksum
+[21/21] tests/review/portable.spec.js:20:1 › a renamed copy in another directory opens both views without supporting files
+  20) tests/review/portable.spec.js:20:1 › a renamed copy in another directory opens both views without supporting files
+
+    Error: page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/TorricoDev/games/reliquias-da-ruina/test-results/review-portable-a-renamed--d1b0a-ws-without-supporting-files/c%C3%B3pia%20da%20revis%C3%A3o.html
+    Call log:
+      - navigating to "file:///workspace/TorricoDev/games/reliquias-da-ruina/test-results/review-portable-a-renamed--d1b0a-ws-without-supporting-files/c%C3%B3pia%20da%20revis%C3%A3o.html", waiting until "load"
+
+
+      24 |   page.on('pageerror', error => errors.push(error.message));
+      25 |   page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
+    > 26 |   await page.goto(pathToFileURL(copy).href);
+         |              ^
+      27 |   await expect(page.locator('#game-status')).toHaveText('SALA ATIVA');
+      28 |   await page.getByRole('link', { name: '02 / Laboratório de animações' }).click();
+      29 |   await expect(page.locator('#lab-status')).toHaveText('REPRODUZINDO');
+        at /workspace/TorricoDev/games/reliquias-da-ruina/tests/review/portable.spec.js:26:14
+
+    Error Context: test-results/review-portable-a-renamed--d1b0a-ws-without-supporting-files/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/review-portable-a-renamed--d1b0a-ws-without-supporting-files/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/review-portable-a-renamed--d1b0a-ws-without-supporting-files/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+  20 failed
+    tests/browser/animation-lab.spec.js:31:1 › catalog loads the shared actor, metadata and eight real directional animations
+    tests/browser/animation-lab.spec.js:53:1 › pause, resume, bidirectional stepping and timeline select actual sheet frames
+    tests/browser/animation-lab.spec.js:88:1 › playback speed changes observed frames without changing the original FPS
+    tests/browser/animation-lab.spec.js:107:1 › grid, pivot, baseline, hitbox and three backgrounds change rendered pixels
+    tests/browser/animation-lab.spec.js:133:1 › all zoom values 1×–8× preserve logical resolution and allow scrolling
+    tests/browser/animation-lab.spec.js:151:1 › navigation returns to a playable room and reopens an independent laboratory
+    tests/browser/animation-lab.spec.js:169:3 › small screen and DPR 2 › 1× retains eight directions and sharp pixels
+    tests/browser/loading.spec.js:4:1 › scripts, styles and sheets load with no resource or console errors
+    tests/browser/room.spec.js:52:1 › boots without runtime errors and preserves a 320×180 canvas with integer zoom
+    tests/browser/room.spec.js:59:1 › walks in eight directions at normalized speed, then retains facing while idle
+    tests/browser/room.spec.js:89:1 › collides with world bounds and altar ─────────────────────────
+    tests/browser/room.spec.js:97:1 › pause freezes physics, reset returns to spawn, focus loss releases keys
+    tests/browser/room.spec.js:116:1 › arrow keys move and opposing keys cancel ────────────────────
+    tests/browser/room.spec.js:126:1 › all four walls stop the foot collider ───────────────────────
+    tests/browser/room.spec.js:139:1 › all five obstacles block the player on approach ─────────────
+    tests/browser/room.spec.js:160:1 › idle and held movement advance visible frames; pause freezes playback
+    tests/browser/room.spec.js:183:1 › buttons, Escape, paused reset and collision overlay work ────
+    tests/browser/room.spec.js:214:5 › DPR 1 › resizes at integer 1×/2×/3× without smoothing or shrinking
+    tests/browser/room.spec.js:214:5 › DPR 2 › resizes at integer 1×/2×/3× without smoothing or shrinking
+    tests/review/portable.spec.js:20:1 › a renamed copy in another directory opens both views without supporting files
+  1 passed (24.7s)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

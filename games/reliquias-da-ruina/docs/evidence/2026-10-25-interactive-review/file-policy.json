@@ -1,0 +1,35 @@
+{
+  "mode": "direct-file-url",
+  "stats": {
+    "startTime": "2026-10-25T15:54:08.706Z",
+    "duration": 24714.908,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 20,
+    "flaky": 0
+  },
+  "blocked_by_administrator": 20,
+  "blocked_test_titles": [
+    "catalog loads the shared actor, metadata and eight real directional animations",
+    "pause, resume, bidirectional stepping and timeline select actual sheet frames",
+    "playback speed changes observed frames without changing the original FPS",
+    "grid, pivot, baseline, hitbox and three backgrounds change rendered pixels",
+    "all zoom values 1\u00d7\u20138\u00d7 preserve logical resolution and allow scrolling",
+    "navigation returns to a playable room and reopens an independent laboratory",
+    "1\u00d7 retains eight directions and sharp pixels",
+    "scripts, styles and sheets load with no resource or console errors",
+    "boots without runtime errors and preserves a 320\u00d7180 canvas with integer zoom",
+    "walks in eight directions at normalized speed, then retains facing while idle",
+    "collides with world bounds and altar",
+    "pause freezes physics, reset returns to spawn, focus loss releases keys",
+    "arrow keys move and opposing keys cancel",
+    "all four walls stop the foot collider",
+    "all five obstacles block the player on approach",
+    "idle and held movement advance visible frames; pause freezes playback",
+    "buttons, Escape, paused reset and collision overlay work",
+    "resizes at integer 1\u00d7/2\u00d7/3\u00d7 without smoothing or shrinking",
+    "resizes at integer 1\u00d7/2\u00d7/3\u00d7 without smoothing or shrinking",
+    "a renamed copy in another directory opens both views without supporting files"
+  ],
+  "note": "Browser policy was not modified; subsequent HTML-content tests use a separate in-memory document target."
+}

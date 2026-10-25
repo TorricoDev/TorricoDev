@@ -7,11 +7,13 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "node tools/check-source.mjs && node tools/validate-assets.mjs && vite build",
+    "build:review": "node tools/check-source.mjs && node tools/validate-assets.mjs && node tools/build-review.mjs",
     "preview": "vite preview --host 0.0.0.0",
     "check": "node tools/check-source.mjs",
     "test": "node --test tests/*.test.js",
     "generate:placeholders": "node tools/generate-placeholders.mjs",
     "validate:assets": "node tools/validate-assets.mjs",
+    "validate": "npm run validate:assets",
     "test:browser": "playwright test"
   },
   "dependencies": { "phaser": "3.90.0" },

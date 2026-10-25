@@ -1,0 +1,56 @@
+$ npm test
+
+> reliquias-da-ruina@0.1.0 test
+> node --test tests/*.test.js
+
+✔ frame stepping wraps in both directions, including single-frame clips (1.174874ms)
+✔ frame stepping rejects invalid indices and frame counts (1.037718ms)
+✔ manual zoom permits exactly the eight integer scales (3.88907ms)
+✔ all eight cells fit the 320×180 gallery and preserve source anchors/collider geometry (2.047525ms)
+✔ missing body profile remains explicit and invalid gallery indices fail (0.289104ms)
+✔ five original rows provide all eight directions using safe horizontal mirrors (2.167936ms)
+✔ animation speed, repeat and frame range come from action data (4.424936ms)
+✔ eight original directions work without mirroring asymmetric art (0.435785ms)
+✔ manifest rejects unsafe mirroring (0.516035ms)
+✔ manifest rejects mirror chains (0.526631ms)
+✔ manifest rejects missing directions (0.374953ms)
+✔ manifest rejects duplicate directions (0.356456ms)
+✔ manifest rejects off-center mirror anchor (0.255864ms)
+✔ manifest rejects wrong cell category (0.377527ms)
+✔ manifest rejects invalid FPS (0.450757ms)
+✔ manifest rejects invalid frame count (0.234653ms)
+✔ manifest rejects path traversal (0.394382ms)
+✔ manifest rejects opaque body alpha policy (1.821376ms)
+✔ manifest rejects wrong vertical pivot (0.370155ms)
+✔ unknown states and orientations fail clearly (1.07886ms)
+✔ tracked sheets match dimensions, alpha, margins and baseline (46.694789ms)
+✔ PNG encoder and decoder preserve exact RGBA, including transparent pixels (1.749958ms)
+✔ PNG parser rejects corrupt, truncated and non-PNG inputs (0.536015ms)
+✔ sheet validation rejects dimensions, alpha blending, cropping, empty frames and foot drift (1.536848ms)
+✔ decoder supports PNG row filters Sub, Up, Average and Paeth used by art exporters (2.315607ms)
+✔ all eight directions preserve the same speed (1.599842ms)
+✔ idle retains facing, with south as the initial direction (1.188194ms)
+✔ opposite keys cancel without NaN (2.382849ms)
+✔ near-horizontal vectors are visually quantized without changing the movement vector (0.215604ms)
+✔ viewport scaling always uses whole pixels, including undersized viewports (0.269444ms)
+✔ room spawn and every static obstacle fit inside room bounds (0.323636ms)
+✔ review HTML embeds script, CSS, licenses and an offline resource policy (2.420966ms)
+✔ review packaging fails if its explicit entry or head is missing/duplicated (0.47265ms)
+✔ additional external script/style references cannot be silently omitted (0.518308ms)
+✔ embedded closing tags cannot terminate script/style or a license comment (5.992539ms)
+✔ review startup waits for the document before creating the Phaser game (1.527794ms)
+ℹ tests 36
+ℹ suites 0
+ℹ pass 36
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 286.216152
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+
+Exit status: 0

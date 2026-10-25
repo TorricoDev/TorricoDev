@@ -1,0 +1,19 @@
+$ npm run validate
+
+> reliquias-da-ruina@0.1.0 validate
+> npm run validate:assets
+
+
+> reliquias-da-ruina@0.1.0 validate:assets
+> node tools/validate-assets.mjs
+
+OK traveler.json/idle: 96×240, 10 quadros
+OK traveler.json/move: 192×240, 20 quadros
+30 quadros validados: RGBA, dimensões, margens, alpha e alinhamento.
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+
+Exit status: 0

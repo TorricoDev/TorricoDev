@@ -2,6 +2,9 @@ import Phaser from 'phaser';
 import { ACTORS } from '../assets/actor-catalog.js';
 import { registerAnimations } from '../animation/AnimationDriver.js';
 
+// Only the review build defines this map. Vite's regular asset URLs stay intact.
+const embeddedAssets = import.meta.env.REVIEW_ASSETS ?? {};
+
 export class BootScene extends Phaser.Scene {
   constructor(target = 'TestRoom') { super('Boot'); this.target = target; }
 
@@ -14,7 +17,8 @@ export class BootScene extends Phaser.Scene {
     });
     for (const { manifest } of ACTORS) {
       for (const [action, animation] of Object.entries(manifest.animations)) {
-        this.load.spritesheet(`${manifest.id}:${action}`, `${import.meta.env.BASE_URL}${animation.file}`, { frameWidth: manifest.cell[0], frameHeight: manifest.cell[1] });
+        const url = embeddedAssets[animation.file] ?? `${import.meta.env.BASE_URL}${animation.file}`;
+        this.load.spritesheet(`${manifest.id}:${action}`, url, { frameWidth: manifest.cell[0], frameHeight: manifest.cell[1] });
       }
     }
   }

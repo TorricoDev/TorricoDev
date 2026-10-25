@@ -82,6 +82,24 @@ A timeline e o avanço manual pausam, circulam nos extremos e mantêm as oito or
 
 **Evidência da Etapa 2:** 31 testes Node, 30 quadros e build aprovados; 18 testes de navegador sobre produção (7 do laboratório + 11 da sala) sem erros de console/JavaScript. Os testes conferem quadros reais, aliases, velocidade, guias por diferença de pixels, fundos, zoom e navegação. A primeira execução foi interrompida após diagnosticar rótulos ambíguos nos selects; labels explícitos corrigiram a associação. A captura DPR 2 também ganhou enquadramento/checagem de dimensões para evitar evidência cortada. Ver [relatório da Etapa 2](evidence/2026-10-23-stage-2-animation-lab.md).
 
+## D016 — Acesso humano depende de recurso real de entrega
+
+**Etapa 3, 25/10/2026:** as ferramentas/configuração desta sessão não fornecem encaminhamento privado nem URL de preview. A resposta mais recente do usuário informa ausência desse botão. A consulta à documentação oficial de ambientes retornou HTTP 403; não usar essa falha como prova de inexistência global do recurso. `open_in_codex` apenas enfileirou a abertura do arquivo e não estabelece transferência ou execução no cliente. Não criar URLs, túneis ou publicação pública.
+
+A alternativa é um HTML autossuficiente privado. Salvar/exportar esse arquivo e abri-lo no navegador do usuário é um passo separado, ainda sem confirmação. Recomendar revisão humana antes do combate; não registrar resultados humanos baseados em automação.
+
+## D017 — Exportação HTML opcional preserva o build Vite
+
+`build:review` usa o Vite existente, sem dependência adicional, e produz script IIFE, CSS e PNGs incorporados em `dist-review/`. A saída é ignorada pelo Git; a cópia entregue fica no workspace privado. O Boot usa um mapa de imagens `data:` somente nesse build e mantém URLs normais nos demais. Pivôs, sprites, FPS, física, controlador e arquitetura de cenas continuam compartilhados. O HTML inclui os avisos MIT, sem requisições externas necessárias.
+
+**Correção comprovada:** o script clássico incorporado inicialmente rodava enquanto o documento ainda carregava, antecipando o ResizeObserver/ScaleManager em relação ao boot Phaser. A embalagem agora aguarda `DOMContentLoaded`, preservando a semântica de inicialização do módulo original. A regressão em memória passou de 7/21 para 21/21 sem suprimir os erros de console. Reconstrução gerou o mesmo hash e não modificou `dist/`.
+
+## D018 — Separar arquivo, conteúdo e acesso humano na validação
+
+O Chromium remoto bloqueou `file://` com `ERR_BLOCKED_BY_ADMINISTRATOR`: 20 testes de navegação foram impedidos antes da aplicação; um check de checksum passou. Nenhuma política ou verificação de segurança foi desativada. Para verificar o conteúdo, `GAME_TEST_FILE` fornece o HTML por roteamento em memória com contexto offline, usando origem reservada `.invalid` exclusivamente de teste. Isso não é prévia web e não certifica abertura real de arquivo no computador do usuário.
+
+A validação final separa: 19 casos Vite/HTTP, 21 do HTML em memória, e a abertura direta/humana ainda pendente. `npm run validate` foi adicionado como alias do validador de assets para corresponder ao comando pedido, sem duplicar lógica ou alterar lockfile. Ver [evidências da Etapa 3](evidence/2026-10-25-stage-3-interactive-review.md).
+
 ## Fontes técnicas consultadas
 
 - [Phaser 3.90.0 — Arcade Body](https://github.com/phaserjs/phaser/blob/v3.90.0/src/physics/arcade/Body.js), conferido também no pacote instalado para `reset`, `updateFromGameObject` e `postUpdate`.

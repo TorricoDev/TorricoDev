@@ -1,8 +1,37 @@
 # Estado do projeto
 
-23/10/2026 · Etapa 2: Laboratório de Animações implementado e validado no Codex Cloud · modos Criação, Correção e Auditoria.
+25/10/2026 · Etapa 3: alternativa HTML preparada; acesso humano ainda não confirmado · modos Auditoria, Criação e Correção.
 
-## Resultado atual — Etapa 2
+## Resultado atual — Etapa 3
+
+**Prévia remota por URL: não disponibilizada nesta sessão.** Não há ferramenta/URL de encaminhamento privado, a configuração não expõe esse recurso e a resposta mais recente do usuário informa que ele não aparece na interface. A ferramenta de abrir um painel do Codex apenas enfileirou a abertura do arquivo; isso não comprova download nem execução pelo usuário. Não foi criada URL pública, túnel ou hospedagem.
+
+**Alternativa preparada:** HTML único de 1.246.660 bytes, com código, Phaser, CSS e PNGs incorporados. O artefato privado foi colocado no workspace para ser salvo/exportado pela conversa; não integra o Git público. O cliente precisa permitir essa transferência. O usuário informou que não via a interface do jogo; foi explicado que ela só aparece ao abrir o HTML salvo no navegador. Download e revisão humana continuam sem confirmação.
+
+**Limitação de validação direta:** o Chromium gerenciado bloqueia `file://` com `ERR_BLOCKED_BY_ADMINISTRATOR`. Foram preservadas suas políticas. A execução do conteúdo do HTML foi verificada por resposta em memória com contexto offline; esse resultado não deve ser declarado como aprovação da abertura direta de arquivo ou da experiência humana.
+
+| Verificação da Etapa 3 | Resultado |
+| --- | --- |
+| `npm ci` | passou; lockfile preservado |
+| `npm run check` | 34 arquivos JS |
+| `npm test` | 36 passaram, 0 falhas/skips |
+| `npm run validate` | novo alias do validador existente; 30 quadros aprovados |
+| `npm run build` | passou; aviso não bloqueante do bundle Phaser |
+| `npm run build:review` | HTML único gerado; reconstrução idêntica; `dist/` preservado |
+| Playwright Vite/HTTP interno | 19 passaram, 0 falhas/skips/flaky; 54,4 s |
+| Playwright conteúdo HTML em memória, sem rede | 21 passaram, 0 falhas/skips/flaky; 53,9 s |
+| Navegação real `file://` no executor | bloqueada por política; não aprovada |
+| Download/abertura e revisão pelo usuário | ainda não confirmados |
+
+Os casos finais não registraram erros de JavaScript/console. Foram conferidos scripts, CSS, os dois PNGs, navegação sala/laboratório, controles, colisões, pausa/reset, quadros, velocidade, zoom/guias e responsividade em DPR 1/2. A correção de boot do HTML aguarda DOM pronto, sem alterar física, animações ou identidade visual.
+
+SHA-256 do HTML: `4810600a6973450e8c3fdfdd406b837b44de306e1369d9fb68340f70618b8861`. O build normal Vite permanece o fluxo de desenvolvimento. Não houve novas dependências; lockfile, manifest, sprites, Player e AnimationDriver foram preservados.
+
+[Instruções para salvar e abrir](INTERACTIVE_REVIEW.md) · [evidências e limites](evidence/2026-10-25-stage-3-interactive-review.md).
+
+**Combate:** aguardar a confirmação do acesso e a revisão humana da base antes de iniciar. Manter PR #1 em rascunho, sem merge automático.
+
+## Etapa 2 — histórico
 
 O laboratório está disponível pelo menu **02 / Laboratório de animações**, na rota `?view=animations`, separado da sala jogável. Reutiliza `AnimationDriver`, `validateManifest`, `resolveAnimation` e o catálogo que o Boot também utiliza. A cena de inspeção cria sprites sem corpos físicos.
 

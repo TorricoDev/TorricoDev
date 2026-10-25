@@ -4,11 +4,13 @@ Protótipo inicial de roguelite medieval em **Phaser 3 + JavaScript + Vite**. Um
 
 ## Situação da entrega
 
-A sala e o Laboratório de Animações foram executados em Chromium real no Codex Cloud, na branch `codex/roguelite-bootstrap-2026-10-23`. Na Etapa 2 passaram 31 testes Node e 18 testes de navegador, além de check, validação de assets e build. Veja [o relatório do laboratório](docs/evidence/2026-10-23-stage-2-animation-lab.md), [o estado atual](docs/PROJECT_STATUS.md) e a [validação anterior da sala](docs/evidence/2026-10-23-stage-1-cloud.md).
+A sala e o Laboratório de Animações foram executados no Codex Cloud, na branch `codex/roguelite-bootstrap-2026-10-23`. Na Etapa 3 passaram 36 testes Node, 19 de navegador sobre Vite e 21 sobre o conteúdo HTML com rede desativada, além de check, assets e build. A abertura direta `file://` foi bloqueada pelo navegador gerenciado e continua separada desses resultados. Veja [acesso e revisão interativa](docs/INTERACTIVE_REVIEW.md), [estado atual](docs/PROJECT_STATUS.md) e [evidências da Etapa 3](docs/evidence/2026-10-25-stage-3-interactive-review.md).
 
 Destino: repositório `TorricoDev/TorricoDev`, pasta `games/reliquias-da-ruina/`, [PR #1](https://github.com/TorricoDev/TorricoDev/pull/1). O conector desta tarefa identifica o ambiente como **TorricoDev**; documentos históricos registram também o nome Mark10. Confira o vínculo do executor e a branch, sem depender apenas do nome exibido. O README de perfil e a `main` continuam preservados.
 
 ## Executar no Codex Cloud
+
+**Para a pessoa revisar sem instalar software:** usar o HTML único entregue na conversa, conforme [este roteiro](docs/INTERACTIVE_REVIEW.md). Não há URL de prévia privada confirmada nesta sessão; salvar/exportar o arquivo pelo cliente é um pré-requisito. Os comandos abaixo são para o executor Cloud, não para o computador do usuário.
 
 1. No ambiente associado ao repositório acima, selecionar a branch `codex/roguelite-bootstrap-2026-10-23` (ou `main` depois da integração do PR). O projeto fica em `games/reliquias-da-ruina/`.
 2. Selecionar o executor **Cloud** associado a esse repositório e iniciar o trabalho na branch do jogo. Executar `cd games/reliquias-da-ruina` a partir da raiz clonada. Se o ambiente estiver Unpublished, concluir sua preparação e publicar o ambiente antes de iniciar a tarefa. Essa publicação disponibiliza o executor de desenvolvimento.
@@ -18,17 +20,17 @@ Destino: repositório `TorricoDev/TorricoDev`, pasta `games/reliquias-da-ruina/`
 ```sh
 npm run check
 npm test
-npm run validate:assets
+npm run validate
 npm run build
 ```
 
-5. Se o ambiente oferecer prévia de portas, executar **somente no Cloud**:
+5. Para desenvolvimento e testes internos, executar **somente no Cloud**:
 
 ```sh
 npm run dev -- --host 127.0.0.1 --port 5173
 ```
 
-Abrir a prévia da porta 5173 pela interface do ambiente. Uma URL de localhost do executor remoto não abre diretamente no celular/computador sem um recurso de encaminhamento. A disponibilidade dessa prévia deve ser confirmada em cada ambiente. Sem suporte, registrar a limitação; não publicar o site para contorná-la.
+O endereço de loopback fica restrito ao executor. Não instruir o usuário a abrir essa porta no computador nem presumir um botão de encaminhamento que esta sessão não oferece. Não publicar o site para contornar a limitação. `npm run build:review` gera a alternativa HTML em `dist-review/`, sem modificar `dist/` ou iniciar servidor.
 
 Para integração, usar o Chromium já instalado no executor com `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium`, quando esse caminho existir. Caso contrário, instalar o navegador no Cloud com `npx playwright install chromium` e usar o padrão do Playwright. Com o servidor remoto em execução:
 

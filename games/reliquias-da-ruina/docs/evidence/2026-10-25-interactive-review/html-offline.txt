@@ -1,0 +1,41 @@
+
+> reliquias-da-ruina@0.1.0 test:browser
+> playwright test --reporter=line,json
+
+
+Running 21 tests using 1 worker
+
+(node:45796) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/21] tests/browser/animation-lab.spec.js:31:1 › catalog loads the shared actor, metadata and eight real directional animations
+[2/21] tests/browser/animation-lab.spec.js:53:1 › pause, resume, bidirectional stepping and timeline select actual sheet frames
+[3/21] tests/browser/animation-lab.spec.js:88:1 › playback speed changes observed frames without changing the original FPS
+[4/21] tests/browser/animation-lab.spec.js:107:1 › grid, pivot, baseline, hitbox and three backgrounds change rendered pixels
+[5/21] tests/browser/animation-lab.spec.js:133:1 › all zoom values 1×–8× preserve logical resolution and allow scrolling
+[6/21] tests/browser/animation-lab.spec.js:151:1 › navigation returns to a playable room and reopens an independent laboratory
+[7/21] tests/browser/animation-lab.spec.js:169:3 › small screen and DPR 2 › 1× retains eight directions and sharp pixels
+[8/21] tests/browser/loading.spec.js:4:1 › scripts, styles and sheets load with no resource or console errors
+[9/21] tests/browser/room.spec.js:52:1 › boots without runtime errors and preserves a 320×180 canvas with integer zoom
+[10/21] tests/browser/room.spec.js:59:1 › walks in eight directions at normalized speed, then retains facing while idle
+tests/browser/room.spec.js:59:1 › walks in eight directions at normalized speed, then retains facing while idle
+Eight-direction displacement: [{"facing":"N","dx":0,"dy":-33.599999999999994,"distance":33.599999999999994},{"facing":"NE","dx":23.758999999999986,"dy":-23.759,"distance":33.60030002842236},{"facing":"E","dx":33.599999999999994,"dy":0,"distance":33.599999999999994},{"facing":"SE","dx":22.909999999999997,"dy":22.909999999999997,"distance":32.399632713967605},{"facing":"S","dx":0,"dy":33.599999999999994,"distance":33.599999999999994},{"facing":"SW","dx":-23.758999999999986,"dy":23.758999999999986,"distance":33.600300028422346},{"facing":"W","dx":-33.599999999999994,"dy":0,"distance":33.599999999999994},{"facing":"NW","dx":-23.758999999999986,"dy":-23.759,"distance":33.60030002842236}]
+
+[11/21] tests/browser/room.spec.js:89:1 › collides with world bounds and altar
+[12/21] tests/browser/room.spec.js:97:1 › pause freezes physics, reset returns to spawn, focus loss releases keys
+[13/21] tests/browser/room.spec.js:116:1 › arrow keys move and opposing keys cancel
+[14/21] tests/browser/room.spec.js:126:1 › all four walls stop the foot collider
+[15/21] tests/browser/room.spec.js:139:1 › all five obstacles block the player on approach
+[16/21] tests/browser/room.spec.js:160:1 › idle and held movement advance visible frames; pause freezes playback
+[17/21] tests/browser/room.spec.js:183:1 › buttons, Escape, paused reset and collision overlay work
+[18/21] tests/browser/room.spec.js:214:5 › DPR 1 › resizes at integer 1×/2×/3× without smoothing or shrinking
+[19/21] tests/browser/room.spec.js:214:5 › DPR 2 › resizes at integer 1×/2×/3× without smoothing or shrinking
+[20/21] tests/review/portable.spec.js:7:1 › embedded PNGs preserve original bytes and the artifact matches its checksum
+[21/21] tests/review/portable.spec.js:20:1 › a renamed copy supplies both views from memory without supporting files
+  21 passed (53.9s)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

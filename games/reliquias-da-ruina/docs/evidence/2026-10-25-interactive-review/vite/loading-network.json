@@ -1,0 +1,54 @@
+{
+  "mode": "vite-http",
+  "responses": [
+    {
+      "url": "http://127.0.0.1:4173/",
+      "status": 200,
+      "type": "text/html"
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/index-w5sK7TXH.css",
+      "status": 200,
+      "type": "text/css"
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/index-xLbKwnxQ.js",
+      "status": 200,
+      "type": "text/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/phaser-DXXWZowi.js",
+      "status": 200,
+      "type": "text/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/actors/traveler/idle.png",
+      "status": 200,
+      "type": "image/png"
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/actors/traveler/move.png",
+      "status": 200,
+      "type": "image/png"
+    },
+    {
+      "url": "blob:http://127.0.0.1:4173/833362b2-8725-4fd8-81a0-be291cd230cf",
+      "status": 200,
+      "type": "image/png"
+    },
+    {
+      "url": "blob:http://127.0.0.1:4173/93cd64e5-5817-43a7-b1e7-62d7055362b8",
+      "status": 200,
+      "type": "image/png"
+    }
+  ],
+  "documentRequests": [
+    "http://127.0.0.1:4173/",
+    "http://127.0.0.1:4173/assets/index-xLbKwnxQ.js",
+    "http://127.0.0.1:4173/assets/phaser-DXXWZowi.js",
+    "http://127.0.0.1:4173/assets/index-w5sK7TXH.css",
+    "http://127.0.0.1:4173/assets/actors/traveler/idle.png",
+    "http://127.0.0.1:4173/assets/actors/traveler/move.png"
+  ],
+  "errors": []
+}

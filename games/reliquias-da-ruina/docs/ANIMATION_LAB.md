@@ -2,6 +2,8 @@
 
 ## Abrir no Cloud
 
+Para revisão humana sem instalação local, usar o HTML autossuficiente e as instruções de [acesso interativo](INTERACTIVE_REVIEW.md). A prévia de portas não está confirmada nesta sessão; os comandos seguintes continuam sendo apenas o fluxo remoto de desenvolvimento/teste.
+
 No executor remoto, entre em `games/reliquias-da-ruina/` e inicie `npm run dev -- --host 127.0.0.1 --port 5173`. Na aplicação, selecione **02 / Laboratório de animações**. A rota é `?view=animations`; **01 / Sala jogável** retorna à sala em `?view=room`. As rotas escolhem cenas separadas e recarregam a aplicação, sem manter entrada ou física da outra cena.
 
 Para testar o build, use `npm run build` e `npm run preview -- --host 127.0.0.1 --port 4173` no Cloud. URLs de loopback são destinos internos do executor; não são prévias públicas. O acesso interativo pela interface depende do encaminhamento de portas oferecido pelo ambiente. Nesta tarefa, a validação visual usa Chromium remoto via Playwright; nenhum servidor deve ser iniciado no computador do usuário.

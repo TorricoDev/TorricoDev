@@ -1,4 +1,5 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures.js';
+import { entryURL } from './entry-url.js';
 
 test.use({ viewport: { width: 1100, height: 1200 } });
 const errorsByPage = new WeakMap();
@@ -21,7 +22,7 @@ test.beforeEach(async ({ page }) => {
   page.on('pageerror', error => errors.push(error.message));
   page.on('console', message => { if (message.type() === 'error') errors.push(`${message.text()} (${message.location().url})`); });
   await page.clock.install();
-  await page.goto('/?view=animations');
+  await page.goto(entryURL('?view=animations'));
   await expect(page.locator('#lab-status')).toHaveText('REPRODUZINDO');
   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 500));
 });

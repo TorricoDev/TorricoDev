@@ -1,0 +1,11 @@
+{
+  "stats": {
+    "startTime": "2026-10-25T15:57:30.702Z",
+    "duration": 77276.353,
+    "expected": 7,
+    "skipped": 0,
+    "unexpected": 14,
+    "flaky": 0
+  },
+  "error": "ResizeObserver -> ScaleManager.setZoom before Phaser boot"
+}

@@ -1,4 +1,5 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures.js';
+import { entryURL } from './entry-url.js';
 
 const runtimeErrors = new WeakMap();
 
@@ -39,7 +40,7 @@ test.beforeEach(async ({ page }) => {
     if (message.type() === 'error') errors.push(`${message.text()} (${message.location().url})`);
   });
   await page.clock.install();
-  await page.goto('/');
+  await page.goto(entryURL());
   await expect(page.locator('#game-status')).toHaveText('SALA ATIVA');
   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 500));
 });

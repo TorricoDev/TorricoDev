@@ -18,7 +18,8 @@ Em pedidos mistos, auditar o trecho afetado, corrigir falhas que bloqueiem a tar
 - Em sessão Desktop sem executor remoto, editar fontes e executar somente verificações sem dependências com o runtime já fornecido pelo Codex. Declarar essa diferença. Não declarar build ou validação visual sem execução real.
 - Sem hospedagem pública, serviços pagos, infraestrutura externa, publicação de repositório ou envio de dados sem autorização.
 - No Cloud: Node >=22.12, `npm install` no primeiro setup; guardar `package-lock.json` gerado e usar `npm ci` nas próximas execuções. Nunca inventar lockfile ou resultados.
-- Validar com `npm run check`, `npm test`, `npm run validate:assets` e `npm run build`. Prévia e teste de navegador exigem o ambiente remoto descrito no README.
+- Validar com `npm run check`, `npm test`, `npm run validate` (alias de `validate:assets`) e `npm run build`. Prévia e teste de navegador exigem o ambiente remoto descrito no README.
+- Revisão sem servidor usa `npm run build:review`, com saída ignorada em `dist-review/`. Não versionar/publicar o HTML gerado. Ler `docs/INTERACTIVE_REVIEW.md`: testes do conteúdo em memória não equivalem a abertura humana ou navegação `file://`, bloqueada pelo Chromium gerenciado. Não alterar políticas para contornar esse limite.
 
 ## Contratos técnicos e artísticos
 
